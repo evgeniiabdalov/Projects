@@ -1,0 +1,17 @@
+Zadani semestralni prace
+
+Program je engine pro hraní karetního RPG
+
+Trida GameManager spousti uzivatelske rozhrani pro hrace,
+umoznuje ukládat a načítat rozehrané hry
+
+Byla implementovana varianta hrac proti pocitace,
+a varianta hrac proti hrace
+
+Trida Game prideluje hracum karty a spoisti se game loop
+
+Hrac ma parametry Health, Protection, Power a Energy
+Hrac muze zvolit kartu bud pro sobe, aby zlepsil sve parametry,
+anebo pro utoceni jineho hrace
+
+Na konci hry hrace muzou se podivat do score, ktery zobrazuji vysledky vsech her 
