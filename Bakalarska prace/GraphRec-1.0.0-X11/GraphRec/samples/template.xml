@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE graphrec>
+<graphrec version="1.0">
+    <solution id="1">
+        <scene bg="#ffffff">
+            <viewport x="-1.18921" y="-29.7302"/>
+            <matrix m11="1.68179" m12="0" m21="0" m22="1.68179" dx="0" dy="0"/>
+        </scene>
+        <graph>
+            <entity id="1" bg="#0000ff" bgf="#00007f" fg="#ffffff" fgf="#ffffff"/>
+            <entity id="2" bg="#ff0000" bgf="#aa0000" fg="#ffffff" fgf="#ffffff"/>
+            <entity id="3" bg="#00ff00" bgf="#005500" fg="#ffffff" fgf="#ffffff"/>
+            <node id="1" ent="1" x="-18.7568" y="-8.08399" bg="#ffaa00" fg="#000000" bnd="#000000"/>
+            <node id="2" ent="2" x="4.0907" y="-71.4452" bg="#ffaa00" fg="#000000" bnd="#000000"/>
+            <node id="3" ent="3" x="-62.2215" y="-59.842" bg="#ffaa00" fg="#000000" bnd="#000000"/>
+            <edge n1="1" n2="2" ln="#000000" hgl="#00ffff"/>
+            <edge n1="2" n2="3" ln="#000000" hgl="#00ffff"/>
+            <edge n1="3" n2="1" ln="#000000" hgl="#00ffff"/>
+        </graph>
+        <scenario validator="Multirobot">
+            <move tms="0" src="3" dst="1"/>
+            <move tms="0" src="1" dst="2"/>
+            <move tms="0" src="2" dst="3"/>
+            <move tms="1" src="1" dst="2"/>
+            <move tms="1" src="2" dst="3"/>
+            <move tms="1" src="3" dst="1"/>
+            <move tms="2" src="1" dst="2"/>
+            <move tms="2" src="2" dst="3"/>
+            <move tms="2" src="3" dst="1"/>
+        </scenario>
+    </solution>
+</graphrec>

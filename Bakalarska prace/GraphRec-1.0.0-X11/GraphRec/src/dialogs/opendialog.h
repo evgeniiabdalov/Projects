@@ -1,0 +1,90 @@
+/* GraphRec
+ * Copyright (c) 2009 Petr Koupy <petr.koupy@gmail.com>
+ *
+ * GNU General Public License Usage
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+#ifndef OPENDIALOG_H
+#define OPENDIALOG_H
+
+#include <QtCore/QList>
+#include <QtCore/QString>
+#include <QtGui/QDialog>
+
+#include "parsers/parser.h"
+
+class QEvent;
+class QSignalMapper;
+class QWidget;
+class QTreeWidget;
+class QTreeWidgetItem;
+class QPointF;
+class QMenu;
+
+namespace Ui
+{
+    class OpenDialog;
+}
+
+class OpenDialog : public QDialog
+{
+    Q_OBJECT
+    Q_DISABLE_COPY(OpenDialog)
+
+public:
+    explicit OpenDialog(QWidget* parent = 0);
+    virtual ~OpenDialog();
+
+    typedef struct
+    {
+        qint64 filePosition;
+        QString fileName;
+        QString parser;
+        QString validator;
+        QString layouter;
+    } SolutionInfo;
+
+    QList<OpenDialog::SolutionInfo> acceptedSolutions;
+
+    QList<Parser::HeaderItem> headerTemplate;
+
+public slots:
+    void on_buttonAddFiles_clicked();
+    void on_buttonToChosen_clicked();
+    void on_buttonToFound_clicked();
+    void on_buttonOpen_clicked();
+    void on_buttonCancel_clicked();
+
+protected:
+    virtual void changeEvent(QEvent* e);
+
+protected slots:
+    void SetValidator(const QString& validator);
+    void ShowContextMenu(const QPoint& position);
+    void ItemDoubleClickedFound(QTreeWidgetItem* item, int column);
+    void ItemDoubleClickedChosen(QTreeWidgetItem* item, int column);
+
+private:
+    Ui::OpenDialog* m_ui;
+    QMenu* m_contextMenu;
+    QSignalMapper* m_signalMapperValidators;
+    QTreeWidget* m_senderTreeWidget;
+
+    void HideColumn(Parser::HeaderItem what);
+    void FillMissingInfo(QTreeWidgetItem* item);
+    void Move(QTreeWidget* source, QTreeWidget* destination);
+};
+
+#endif

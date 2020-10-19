@@ -1,0 +1,2312 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1250">
+<meta name=Generator content="Microsoft Word 12 (filtered)">
+<title>GraphRec User’s Guide</title>
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+@font-face
+	{font-family:Verdana;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:0cm;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	line-height:115%;
+	font-size:9.0pt;
+	font-family:"Verdana","sans-serif";}
+h1
+	{mso-style-link:"Heading 1 Char";
+	margin-top:15.0pt;
+	margin-right:0cm;
+	margin-bottom:2.25pt;
+	margin-left:21.75pt;
+	text-indent:-21.75pt;
+	line-height:115%;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Verdana","sans-serif";
+	letter-spacing:.25pt;}
+h2
+	{mso-style-link:"Heading 2 Char";
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:4.5pt;
+	margin-left:29.25pt;
+	text-indent:-29.25pt;
+	line-height:115%;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Verdana","sans-serif";
+	letter-spacing:.25pt;
+	font-weight:normal;}
+h3
+	{mso-style-link:"Heading 3 Char";
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:39.75pt;
+	margin-bottom:.0001pt;
+	text-indent:-39.75pt;
+	line-height:115%;
+	page-break-after:avoid;
+	font-size:11.0pt;
+	font-family:"Verdana","sans-serif";
+	letter-spacing:.25pt;
+	font-weight:normal;}
+h4
+	{mso-style-link:"Heading 4 Char";
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:43.5pt;
+	margin-bottom:.0001pt;
+	text-indent:-43.5pt;
+	line-height:115%;
+	page-break-after:avoid;
+	font-size:9.0pt;
+	font-family:"Verdana","sans-serif";
+	font-variant:small-caps;
+	letter-spacing:.5pt;
+	font-weight:normal;}
+h5
+	{mso-style-link:"Heading 5 Char";
+	margin-top:10.5pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:51.0pt;
+	margin-bottom:.0001pt;
+	text-indent:-51.0pt;
+	line-height:115%;
+	page-break-after:avoid;
+	font-size:9.0pt;
+	font-family:"Verdana","sans-serif";
+	font-variant:small-caps;
+	color:#1C1C1C;
+	letter-spacing:.5pt;
+	font-weight:normal;}
+h6
+	{mso-style-link:"Heading 6 Char";
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:57.6pt;
+	margin-bottom:.0001pt;
+	text-indent:-57.6pt;
+	line-height:115%;
+	font-size:9.0pt;
+	font-family:"Verdana","sans-serif";
+	font-variant:small-caps;
+	color:#262626;
+	letter-spacing:.25pt;
+	font-weight:normal;}
+p.MsoHeading7, li.MsoHeading7, div.MsoHeading7
+	{mso-style-link:"Heading 7 Char";
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:64.8pt;
+	margin-bottom:.0001pt;
+	text-indent:-64.8pt;
+	line-height:115%;
+	font-size:9.0pt;
+	font-family:"Verdana","sans-serif";
+	font-variant:small-caps;
+	color:#262626;
+	letter-spacing:.5pt;
+	font-weight:bold;}
+p.MsoHeading8, li.MsoHeading8, div.MsoHeading8
+	{mso-style-link:"Heading 8 Char";
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:72.0pt;
+	margin-bottom:.0001pt;
+	text-indent:-72.0pt;
+	line-height:115%;
+	font-size:9.0pt;
+	font-family:"Verdana","sans-serif";
+	font-variant:small-caps;
+	color:#1C1C1C;
+	font-weight:bold;
+	font-style:italic;}
+p.MsoHeading9, li.MsoHeading9, div.MsoHeading9
+	{mso-style-link:"Heading 9 Char";
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:79.2pt;
+	margin-bottom:.0001pt;
+	text-indent:-79.2pt;
+	line-height:115%;
+	font-size:9.0pt;
+	font-family:"Verdana","sans-serif";
+	font-variant:small-caps;
+	color:#121212;
+	font-weight:bold;
+	font-style:italic;}
+p.MsoToc1, li.MsoToc1, div.MsoToc1
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	line-height:115%;
+	font-size:9.0pt;
+	font-family:"Verdana","sans-serif";
+	font-weight:bold;}
+p.MsoToc2, li.MsoToc2, div.MsoToc2
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:44.25pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-26.25pt;
+	line-height:115%;
+	font-size:9.0pt;
+	font-family:"Verdana","sans-serif";}
+p.MsoToc3, li.MsoToc3, div.MsoToc3
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:5.0pt;
+	margin-left:0cm;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	line-height:115%;
+	font-size:9.0pt;
+	font-family:"Verdana","sans-serif";}
+p.MsoToc9, li.MsoToc9, div.MsoToc9
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:5.0pt;
+	margin-left:72.0pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	line-height:115%;
+	font-size:9.0pt;
+	font-family:"Verdana","sans-serif";}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{mso-style-link:"Header Char";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:9.0pt;
+	font-family:"Verdana","sans-serif";}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{mso-style-link:"Footer Char";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:9.0pt;
+	font-family:"Verdana","sans-serif";}
+p.MsoCaption, li.MsoCaption, div.MsoCaption
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:0cm;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	line-height:115%;
+	font-size:8.0pt;
+	font-family:"Verdana","sans-serif";
+	text-transform:uppercase;
+	font-weight:bold;}
+p.MsoTitle, li.MsoTitle, div.MsoTitle
+	{mso-style-link:"Title Char";
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:0cm;
+	text-align:right;
+	border:none;
+	padding:0cm;
+	font-size:24.0pt;
+	font-family:"Verdana","sans-serif";
+	font-variant:small-caps;}
+p.MsoSubtitle, li.MsoSubtitle, div.MsoSubtitle
+	{mso-style-link:"Subtitle Char";
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:36.0pt;
+	margin-left:0cm;
+	text-align:right;
+	font-size:9.0pt;
+	font-family:"Cambria","serif";}
+a:link, span.MsoHyperlink
+	{color:#5F5F5F;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:#919191;
+	text-decoration:underline;}
+strong
+	{color:#262626;}
+em
+	{letter-spacing:.5pt;
+	font-weight:bold;}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-link:"Balloon Text Char";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:8.0pt;
+	font-family:"Tahoma","sans-serif";}
+p.MsoNoSpacing, li.MsoNoSpacing, div.MsoNoSpacing
+	{mso-style-link:"No Spacing Char";
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-left:0cm;
+	font-size:9.0pt;
+	font-family:"Verdana","sans-serif";}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:36.0pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	line-height:115%;
+	font-size:9.0pt;
+	font-family:"Verdana","sans-serif";}
+p.MsoListParagraphCxSpFirst, li.MsoListParagraphCxSpFirst, div.MsoListParagraphCxSpFirst
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:36.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	line-height:115%;
+	font-size:9.0pt;
+	font-family:"Verdana","sans-serif";}
+p.MsoListParagraphCxSpMiddle, li.MsoListParagraphCxSpMiddle, div.MsoListParagraphCxSpMiddle
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:36.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	line-height:115%;
+	font-size:9.0pt;
+	font-family:"Verdana","sans-serif";}
+p.MsoListParagraphCxSpLast, li.MsoListParagraphCxSpLast, div.MsoListParagraphCxSpLast
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:36.0pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	line-height:115%;
+	font-size:9.0pt;
+	font-family:"Verdana","sans-serif";}
+p.MsoQuote, li.MsoQuote, div.MsoQuote
+	{mso-style-link:"Quote Char";
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:0cm;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	line-height:115%;
+	font-size:9.0pt;
+	font-family:"Verdana","sans-serif";
+	font-style:italic;}
+p.MsoIntenseQuote, li.MsoIntenseQuote, div.MsoIntenseQuote
+	{mso-style-link:"Intense Quote Char";
+	margin-top:7.0pt;
+	margin-right:72.0pt;
+	margin-bottom:7.0pt;
+	margin-left:72.0pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	line-height:115%;
+	background:#262626;
+	border:none;
+	padding:0cm;
+	font-size:9.0pt;
+	font-family:"Verdana","sans-serif";
+	color:white;
+	font-weight:bold;
+	font-style:italic;}
+span.MsoSubtleEmphasis
+	{font-style:italic;}
+span.MsoIntenseEmphasis
+	{color:#262626;
+	letter-spacing:.5pt;
+	font-weight:bold;
+	font-style:italic;}
+span.MsoSubtleReference
+	{color:black;
+	text-decoration:underline;}
+span.MsoIntenseReference
+	{font-variant:small-caps;
+	letter-spacing:.25pt;
+	font-weight:bold;
+	text-decoration:underline;}
+span.MsoBookTitle
+	{font-family:"Cambria","serif";
+	font-style:italic;}
+p.MsoTocHeading, li.MsoTocHeading, div.MsoTocHeading
+	{margin-top:15.0pt;
+	margin-right:0cm;
+	margin-bottom:2.25pt;
+	margin-left:0cm;
+	line-height:115%;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Verdana","sans-serif";
+	letter-spacing:.25pt;
+	font-weight:bold;}
+span.HeaderChar
+	{mso-style-name:"Header Char";
+	mso-style-link:Header;}
+span.FooterChar
+	{mso-style-name:"Footer Char";
+	mso-style-link:Footer;}
+span.Heading1Char
+	{mso-style-name:"Heading 1 Char";
+	mso-style-link:"Heading 1";
+	font-family:"Verdana","sans-serif";
+	letter-spacing:.25pt;
+	font-weight:bold;}
+span.Heading2Char
+	{mso-style-name:"Heading 2 Char";
+	mso-style-link:"Heading 2";
+	font-family:"Verdana","sans-serif";
+	letter-spacing:.25pt;}
+span.Heading3Char
+	{mso-style-name:"Heading 3 Char";
+	mso-style-link:"Heading 3";
+	font-family:"Verdana","sans-serif";
+	letter-spacing:.25pt;}
+span.Heading4Char
+	{mso-style-name:"Heading 4 Char";
+	mso-style-link:"Heading 4";
+	font-family:"Verdana","sans-serif";
+	font-variant:small-caps;
+	letter-spacing:.5pt;}
+span.Heading5Char
+	{mso-style-name:"Heading 5 Char";
+	mso-style-link:"Heading 5";
+	font-family:"Verdana","sans-serif";
+	font-variant:small-caps;
+	color:#1C1C1C;
+	letter-spacing:.5pt;}
+span.Heading6Char
+	{mso-style-name:"Heading 6 Char";
+	mso-style-link:"Heading 6";
+	font-family:"Verdana","sans-serif";
+	font-variant:small-caps;
+	color:#262626;
+	letter-spacing:.25pt;}
+span.Heading7Char
+	{mso-style-name:"Heading 7 Char";
+	mso-style-link:"Heading 7";
+	font-family:"Verdana","sans-serif";
+	font-variant:small-caps;
+	color:#262626;
+	letter-spacing:.5pt;
+	font-weight:bold;}
+span.Heading8Char
+	{mso-style-name:"Heading 8 Char";
+	mso-style-link:"Heading 8";
+	font-family:"Verdana","sans-serif";
+	font-variant:small-caps;
+	color:#1C1C1C;
+	font-weight:bold;
+	font-style:italic;}
+span.Heading9Char
+	{mso-style-name:"Heading 9 Char";
+	mso-style-link:"Heading 9";
+	font-family:"Verdana","sans-serif";
+	font-variant:small-caps;
+	color:#121212;
+	font-weight:bold;
+	font-style:italic;}
+span.TitleChar
+	{mso-style-name:"Title Char";
+	mso-style-link:Title;
+	font-variant:small-caps;}
+span.SubtitleChar
+	{mso-style-name:"Subtitle Char";
+	mso-style-link:Subtitle;
+	font-family:"Cambria","serif";}
+span.BezmezerChar
+	{mso-style-name:"Bez mezer Char";
+	mso-style-link:"No Spacing";
+	font-family:"Verdana","sans-serif";}
+span.QuoteChar
+	{mso-style-name:"Quote Char";
+	mso-style-link:Quote;
+	font-style:italic;}
+span.IntenseQuoteChar
+	{mso-style-name:"Intense Quote Char";
+	mso-style-link:"Intense Quote";
+	color:white;
+	background:#262626;
+	font-weight:bold;
+	font-style:italic;}
+span.BalloonTextChar
+	{mso-style-name:"Balloon Text Char";
+	mso-style-link:"Balloon Text";
+	font-family:"Tahoma","sans-serif";}
+span.NoSpacingChar
+	{mso-style-name:"No Spacing Char";
+	mso-style-link:"No Spacing";
+	font-family:"Verdana","sans-serif";}
+.MsoChpDefault
+	{font-size:10.0pt;}
+.MsoPapDefault
+	{margin-bottom:10.0pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	line-height:115%;}
+ /* Page Definitions */
+ @page Section1
+	{size:595.3pt 841.9pt;
+	margin:70.85pt 70.85pt 70.85pt 70.85pt;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+
+</head>
+
+<body lang=CS link="#5F5F5F" vlink="#919191">
+
+<div class=Section1>
+
+<p class=MsoNormal align=left style='margin-right:-21.3pt;text-align:left'><a
+name="_Toc240554715"></a><a name="_Opening_Input_File"></a><span lang=EN-US
+style='font-size:28.0pt;line-height:115%;text-transform:uppercase'>GraphRec</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+style='font-size:20.0pt;line-height:115%;text-transform:uppercase'>USER’S GUIDE</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+style='font-size:12.0pt;line-height:115%'>Version 1.0.0</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+style='font-size:12.0pt;line-height:115%'>Prepared by Petr Koupý &lt;</span><a
+href="mailto:petr.koupy@gmail.com"><span lang=EN-US style='font-size:12.0pt;
+line-height:115%;color:black'>petr.koupy@gmail.com</span></a><span lang=EN-US
+style='font-size:12.0pt;line-height:115%'>&gt;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+style='font-size:12.0pt;line-height:115%'>Last Updated on April 30, 2010<br
+clear=all style='page-break-before:always'>
+</span></p>
+
+<p class=MsoTocHeading><span class=Heading1Char><span lang=EN-US
+style='font-weight:normal'>Table of Contents</span></span></p>
+
+<p class=MsoToc1 style='margin-left:18.0pt;text-indent:-18.0pt'><span
+class=NoSpacingChar><span lang=EN-US>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span></span><a href="#_Opening_Input_File_1"><span
+class=MsoSubtleReference><span lang=EN-US>Opening Input File</span></span></a></p>
+
+<p class=MsoToc1 style='margin-left:18.0pt;text-indent:-18.0pt'><span
+class=NoSpacingChar><span lang=EN-US style='color:black'>2.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span></span><a
+href="#_Environment_Description"><span class=MsoSubtleReference><span
+lang=EN-US>Environment Description</span></span></a></p>
+
+<p class=MsoToc2><span class=NoSpacingChar><span style='color:black'>2.1.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span></span><a
+href="#_Main_Menu"><span class=MsoSubtleReference><span lang=EN-US>Main Menu</span></span></a></p>
+
+<p class=MsoToc2><span class=NoSpacingChar><span style='color:black'>2.2.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span></span><a
+href="#_Tool_Bar"><span class=MsoSubtleReference><span lang=EN-US>Tool Bar</span></span></a></p>
+
+<p class=MsoToc2><span class=NoSpacingChar><span style='color:black'>2.3.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span></span><a
+href="#_Status_Bar"><span class=MsoSubtleReference><span lang=EN-US>Status Bar</span></span></a></p>
+
+<p class=MsoToc2><span class=NoSpacingChar><span style='color:black'>2.4.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span></span><a
+href="#_Tabs"><span class=MsoSubtleReference><span lang=EN-US>Tabs</span></span></a></p>
+
+<p class=MsoToc2><span class=NoSpacingChar><span style='color:black'>2.5.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span></span><a
+href="#_Tabs_and_Splitting"><span class=MsoSubtleReference><span lang=EN-US>Window
+Splitting</span></span></a></p>
+
+<p class=MsoToc1 style='margin-left:18.0pt;text-indent:-18.0pt'><span
+class=NoSpacingChar><span lang=EN-US style='color:black'>3.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span></span><a
+href="#_Controls"><span class=MsoSubtleReference><span lang=EN-US>Controls</span></span></a></p>
+
+<p class=MsoToc2><span class=NoSpacingChar><span style='color:black'>3.1.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span></span><a
+href="#_Mouse"><span class=MsoSubtleReference><span lang=EN-US>Mouse</span></span></a></p>
+
+<p class=MsoToc2><span class=NoSpacingChar><span style='color:black'>3.2.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span></span><a
+href="#_Keyboard"><span class=MsoSubtleReference><span lang=EN-US>Keyboard</span></span></a></p>
+
+<p class=MsoToc1 style='margin-left:18.0pt;text-indent:-18.0pt'><span
+class=NoSpacingChar><span lang=EN-US style='color:black'>4.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span></span><a
+href="#_Validating_Solution"><span class=MsoSubtleReference><span lang=EN-US>Validating
+Solution</span></span></a></p>
+
+<p class=MsoToc1 style='margin-left:18.0pt;text-indent:-18.0pt'><span
+class=NoSpacingChar><span lang=EN-US style='color:black'>5.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span></span><a
+href="#_Layouting_Graph"><span class=MsoSubtleReference><span lang=EN-US>Layouting
+Graph</span></span></a></p>
+
+<p class=MsoToc1 style='margin-left:18.0pt;text-indent:-18.0pt'><span
+class=NoSpacingChar><span lang=EN-US style='color:black'>6.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span></span><a
+href="#_Settings"><span class=MsoSubtleReference><span lang=EN-US>Settings</span></span></a></p>
+
+<p class=MsoToc1 style='margin-left:18.0pt;text-indent:-18.0pt'><span
+class=NoSpacingChar><span lang=EN-US style='color:black'>7.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span></span><a
+href="#_Coloring_Graph_Elements"><span class=MsoSubtleReference><span
+lang=EN-US>Coloring Graph Elements</span></span></a></p>
+
+<p class=MsoToc1 style='margin-left:18.0pt;text-indent:-18.0pt'><span
+class=NoSpacingChar><span lang=EN-US style='color:black'>8.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span></span><a
+href="#_Saving_Output_File"><span class=MsoSubtleReference><span lang=EN-US>Saving
+Output File</span></span></a></p>
+
+<p class=MsoToc1 style='margin-left:18.0pt;text-indent:-18.0pt'><span
+class=NoSpacingChar><span lang=EN-US style='color:black'>9.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span></span><a
+href="#_Controlling_Animation"><span class=MsoSubtleReference><span lang=EN-US>Controlling
+Animation </span></span></a></p>
+
+<p class=MsoToc1 style='margin-left:18.0pt;text-indent:-18.0pt'><span
+class=NoSpacingChar><span lang=EN-US style='color:black'>10.<span
+style='font:7.0pt "Times New Roman"'> </span></span></span><a
+href="#_Capturing_Media_Files"><span class=MsoSubtleReference><span lang=EN-US>Capturing
+Media Files</span></span></a></p>
+
+<p class=MsoToc2><span class=NoSpacingChar><span style='color:black'>10.1.<span
+style='font:7.0pt "Times New Roman"'> </span></span></span><a href="#_Images"><span
+class=MsoSubtleReference><span lang=EN-US>Images</span></span></a></p>
+
+<p class=MsoToc2><span class=NoSpacingChar><span style='color:black'>10.2.<span
+style='font:7.0pt "Times New Roman"'> </span></span></span><a
+href="#_Video_Standards"><span class=MsoSubtleReference><span lang=EN-US>Video
+Standards</span></span></a></p>
+
+<p class=MsoToc2><span class=NoSpacingChar><span style='color:black'>10.3.<span
+style='font:7.0pt "Times New Roman"'> </span></span></span><a
+href="#_Video_Settings"><span class=MsoSubtleReference><span lang=EN-US>Video
+Settings</span></span></a></p>
+
+<p class=MsoToc1 style='margin-left:18.0pt;text-indent:-18.0pt'><span
+class=NoSpacingChar><span lang=EN-US style='color:black'>11.<span
+style='font:7.0pt "Times New Roman"'> </span></span></span><a
+href="#_File_Format"><span class=MsoSubtleReference><span lang=EN-US>Multirobot
+File Format</span></span></a></p>
+
+<p class=MsoToc2><span class=NoSpacingChar><span style='color:black'>11.1.<span
+style='font:7.0pt "Times New Roman"'> </span></span></span><a href="#_Grammar"><span
+class=MsoSubtleReference><span lang=EN-US>Grammar</span></span></a></p>
+
+<p class=MsoToc2><span style='color:black'>11.2.<span style='font:7.0pt "Times New Roman"'>
+</span></span><a href="#_Description"><span class=MsoSubtleReference><span
+lang=EN-US>Description</span></span></a></p>
+
+<p class=MsoToc2>11.3.<span style='font:7.0pt "Times New Roman"'> </span><a
+href="#_Example_1"><span class=MsoSubtleReference><span lang=EN-US>Example</span></span></a></p>
+
+<p class=MsoToc1 style='margin-left:18.0pt;text-indent:-18.0pt'><span
+class=NoSpacingChar><span lang=EN-US>12.<span style='font:7.0pt "Times New Roman"'>
+</span></span></span><a href="#_GraphRec_File_Format"><span
+class=MsoSubtleReference><span lang=EN-US>GraphRec File Format</span></span></a></p>
+
+<p class=MsoToc2>12.1.<span style='font:7.0pt "Times New Roman"'> </span><a
+href="#_Description_1"><span class=MsoSubtleReference><span lang=EN-US>Description</span></span></a></p>
+
+<p class=MsoToc2><span class=NoSpacingChar>12.2.<span style='font:7.0pt "Times New Roman"'>
+</span></span><a href="#_Example_2"><span class=MsoSubtleReference><span
+lang=EN-US>Example</span></span></a></p>
+
+<span style='font-size:9.0pt;line-height:115%;font-family:"Verdana","sans-serif"'><br
+clear=all style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal><span style='line-height:115%'>&nbsp;</span></p>
+
+<h1 style='margin-left:1.0cm;text-indent:-1.0cm'><a name="_Opening_Input_File_1"></a><span
+lang=EN-US>1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US>Opening Input File</span></h1>
+
+<p class=MsoNoSpacing><span lang=EN-US>Input file contains graph definition,
+positions of nodes, colors of graph elements and some additional information.
+It is assumed that input file is generated by path planning software or some
+format converter. Since file format is human-readable, input file can be also
+prepared manually. Detailed specification can be found in <a
+href="#_File_Format"><span class=MsoSubtleReference>Multirobot File Format</span></a>
+section. File can be opened either by toolbar button or by <b>File – Open...</b>
+in the main menu. This action opens dialog containing two lists. List on the
+left side must be first filled with input files before proceeding further. To
+do that, just click on <b>Add files...</b> button and choose one or more input
+files in the standard open dialog. Note that you must choose appropriate file
+format, or the file will be parsed incorrectly. After the files are searched,
+left list contains one line for each graph found in the input file. Each line
+provides some additional information for given graph:</span></p>
+
+<p class=MsoNoSpacing style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>Name </span></b><span lang=EN-US>– Each graph
+in the input file should be marked by its ID number. If ID is not specified,
+dash is displayed instead.</span></p>
+
+<p class=MsoNoSpacing style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>Line</span></b><span lang=EN-US> – Line at
+which graph definition starts in the respective file. Can be useful information
+for manual revision of large input files.</span></p>
+
+<p class=MsoNoSpacing style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>Nodes</span></b><span lang=EN-US> – Number of
+nodes in the graph.</span></p>
+
+<p class=MsoNoSpacing style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>Edges </span></b><span lang=EN-US>– Number of
+edges in the graph.</span></p>
+
+<p class=MsoNoSpacing style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>Entities </span></b><span lang=EN-US>– Number
+of entities that occupy some nodes. This number is always lower than number of
+nodes.</span></p>
+
+<p class=MsoNoSpacing style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>Timesteps</span></b><span lang=EN-US> – Number
+of time steps each solution scenario consists of. One time step is defined by
+arbitrary number of non-conflicting entity movements through one edge.</span></p>
+
+<p class=MsoNoSpacing style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>Movements</span></b><span lang=EN-US> –
+Number of entity movements in the whole solution scenario. Each movement is considered
+as move of one entity through one edge.</span></p>
+
+<p class=MsoNoSpacing style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>Validator</span></b><span lang=EN-US> –Shows
+either default validator or the one preferred by input file. Selected validator
+will be used for initial validation. Validator can be changed by right clicking
+on the respective line. Note that validator can be also changed later in the
+application menu. </span></p>
+
+<p class=MsoNoSpacing><span lang=EN-US>List can be sorted by each of these
+columns and irrelevant files can be folded in order to save space. Lines can be
+multi selected (by mouse dragging or by holding <i>Ctrl</i>/<i>Shift</i> and
+left mouse clicking) and then moved to the list on the right side (by <b>&gt;&gt;&gt;
+</b>button or by double-clicking). Note that if you select header containing
+the file name, all graphs specified by this file will be moved to the right
+list. List on the right side serves as a basket for graphs you are willing to
+open. Graphs can be moved between two lists until you are satisfied with
+selection. To confirm dialog just click <b>Open</b> button and wait until
+selected graphs are loaded.</span></p>
+
+<h1 style='margin-left:1.0cm;text-indent:-1.0cm'><a name="_Toc240554716"></a><a
+name="_Environment_Description"></a><span lang=EN-US>2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US>Environment Description</span></h1>
+
+<h2 style='margin-left:35.9pt;text-indent:-35.9pt'><a name="_Toc240554717"></a><a
+name="_Main_Menu"></a><span lang=EN-US>2.1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US>Main Menu</span></h2>
+
+<p class=MsoNoSpacing><span lang=EN-US>Menu consists of several sections:</span></p>
+
+<p class=MsoNoSpacing style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>File </span></b><span lang=EN-US>menu
+contains actions related to file handling. See <a href="#_Opening_Input_File_1"><span
+class=MsoSubtleReference>Opening Input File</span></a> and <a
+href="#_Saving_Output_File"><span class=MsoSubtleReference>Saving Output File</span></a>
+sections for more information.</span></p>
+
+<p class=MsoNoSpacing style='margin-left:72.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>Open...</span></b><span lang=EN-US> shows
+advanced dialog for choosing input files.</span></p>
+
+<p class=MsoNoSpacing style='margin-left:72.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>Save...</span></b><span lang=EN-US> shows
+standard save dialog for saving single file.</span></p>
+
+<p class=MsoNoSpacing style='margin-left:72.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>Save All...</span></b><span lang=EN-US> shows
+standard save dialog for saving all opened tabs into single file.</span></p>
+
+<p class=MsoNoSpacing style='margin-left:72.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>Exit</span></b><span lang=EN-US> terminates the
+application.</span></p>
+
+<p class=MsoNoSpacing style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>Validation</span></b><span lang=EN-US> menu
+contains actions related to solution validation. See <a
+href="#_Validating_Solution"><span class=MsoSubtleReference>Validating Solution</span></a>
+section for more information.</span></p>
+
+<p class=MsoNoSpacing style='margin-left:72.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>Validator</span></b><span lang=EN-US> submenu
+shows all available validators. Currently selected validator is ticked.</span></p>
+
+<p class=MsoNoSpacing style='margin-left:72.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>Log...</span></b><span lang=EN-US> shows
+dialog for error logging.</span></p>
+
+<p class=MsoNoSpacing style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>Layout</span></b><span lang=EN-US> menu
+contains actions related to graph layouting. See <a href="#_Layouting_Graph"><span
+class=MsoSubtleReference>Layouting Graph</span></a> section for more
+information.</span></p>
+
+<p class=MsoNoSpacing style='margin-left:72.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>Mode</span></b><span lang=EN-US> submenu
+shows list of layouting modes. </span></p>
+
+<p class=MsoNoSpacing style='margin-left:108.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:Wingdings'>§<span style='font:7.0pt "Times New Roman"'>&nbsp;
+</span></span><b><span lang=EN-US>Manual (continuous)</span></b><span
+lang=EN-US> allows full manual control over node positions.</span></p>
+
+<p class=MsoNoSpacing style='margin-left:108.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:Wingdings'>§<span style='font:7.0pt "Times New Roman"'>&nbsp;
+</span></span><b><span lang=EN-US>Manual (discrete)</span></b><span lang=EN-US>
+shows background grid that defines separation granularity.</span></p>
+
+<p class=MsoNoSpacing style='margin-left:108.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:Wingdings'>§<span style='font:7.0pt "Times New Roman"'>&nbsp;
+</span></span><b><span lang=EN-US>Automatic</span></b><span lang=EN-US> enables
+selected layouter and its algorithm for layouting.</span></p>
+
+<p class=MsoNoSpacing style='margin-left:72.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>Layouter</span></b><span lang=EN-US> submenu
+shows all available layouters. Currently selected layouter is ticked.</span></p>
+
+<p class=MsoNoSpacing style='margin-left:72.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>Recalculate</span></b><span lang=EN-US> move
+all nodes to random positions and enables currently selected layouter.
+Available only in <i>Automatic</i> mode.</span></p>
+
+<p class=MsoNoSpacing style='margin-left:72.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>Snap to Grid</span></b><span lang=EN-US>
+aligns positions of all nodes to the closest valid place in the grid. Available
+only in <i>Manual (discrete)</i> mode.</span></p>
+
+<p class=MsoNoSpacing style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>Animation</span></b><span lang=EN-US> menu
+contains actions related to animation control and capturing. Almost all actions
+in this menu appear in two versions – one for currently selected tab and one
+for all foreground (currently visible) tabs. Following list will describe only
+single tab actions. See <a href="#_Controlling_Animation"><span
+class=MsoSubtleReference>Controlling Animation</span></a> and <a
+href="#_Capturing_Media_Files"><span class=MsoSubtleReference>Capturing Media
+Files</span></a> sections for more information.</span></p>
+
+<p class=MsoNoSpacing style='margin-left:72.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>Play</span></b><span lang=EN-US> starts the
+animation that will be running from selected time step until stopped or until
+the last time step.</span></p>
+
+<p class=MsoNoSpacing style='margin-left:72.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>Step</span></b><span lang=EN-US> animates
+only currently selected time step and then stops.</span></p>
+
+<p class=MsoNoSpacing style='margin-left:72.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>Stop </span></b><span lang=EN-US>finishes
+currently animated time step and then stops animation.</span></p>
+
+<p class=MsoNoSpacing style='margin-left:72.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>Seek...</span></b><span lang=EN-US> shows
+dialog for time step selection. Note that this can be also done by controls in
+the tab (see <a href="#_Tabs"><span class=MsoSubtleReference>Tabs</span></a>).</span></p>
+
+<p class=MsoNoSpacing style='margin-left:72.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>Reset</span></b><span lang=EN-US> sets the
+scenario to the beginning.</span></p>
+
+<p class=MsoNoSpacing style='margin-left:72.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>Synchronize All</span></b><span lang=EN-US>
+enables or disables synchronization between tabs when playing animation on more
+of them at once.</span></p>
+
+<p class=MsoNoSpacing style='margin-left:72.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>Snapshot...</span></b><span lang=EN-US> shows
+dialog for capturing images.</span></p>
+
+<p class=MsoNoSpacing style='margin-left:72.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>Sequence...</span></b><span lang=EN-US> shows
+dialog for capturing image sequences or videos. </span></p>
+
+<p class=MsoNoSpacing style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>Setup</span></b><span lang=EN-US> menu
+contains actions related to configuration options. See <a href="#_Settings"><span
+class=MsoSubtleReference>Settings</span></a> and <a
+href="#_Coloring_Graph_Elements"><span class=MsoSubtleReference>Coloring Graph
+Elements</span></a> sections for more information.</span></p>
+
+<p class=MsoNoSpacing style='margin-left:72.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>Colors...</span></b><span lang=EN-US> shows
+dialog for coloring graph elements.</span></p>
+
+<p class=MsoNoSpacing style='margin-left:72.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>Options...</span></b><span lang=EN-US> shows
+main configuration dialog.</span></p>
+
+<p class=MsoNoSpacing style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>Window</span></b><span lang=EN-US> menu
+contains actions related to graphical user interface. See <a href="#_Tabs"><span
+class=MsoSubtleReference>Tabs</span></a> and <a href="#_Window_Splitting"><span
+class=MsoSubtleReference>Window Splitting</span></a> sections for more
+information.</span></p>
+
+<p class=MsoNoSpacing style='margin-left:72.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>Split Horizontally</span></b><span
+lang=EN-US> splits current tab group in a horizontal stack manner.</span></p>
+
+<p class=MsoNoSpacing style='margin-left:72.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>Split Vertically</span></b><span lang=EN-US>
+splits current tab group in a vertical stack manner.</span></p>
+
+<p class=MsoNoSpacing style='margin-left:72.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>Unsplit</span></b><span lang=EN-US>
+recursively joins two tab groups on the same level in the hierarchy.</span></p>
+
+<p class=MsoNoSpacing style='margin-left:72.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>Unsplit All</span></b><span lang=EN-US>
+removes all splits.</span></p>
+
+<p class=MsoNoSpacing style='margin-left:72.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>Toolbar</span></b><span lang=EN-US> button enables
+or disables visibility of the application tool bar.</span></p>
+
+<p class=MsoNoSpacing style='margin-left:72.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>Controls</span></b><span lang=EN-US> button enables
+or disables visibility of additional controls placed inside the tabs.</span></p>
+
+<p class=MsoNoSpacing style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>Help</span></b><span lang=EN-US> menu
+contains actions related to documentation and application information.</span></p>
+
+<p class=MsoNoSpacing style='margin-left:72.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>Documentation...</span></b><span lang=EN-US>
+shows simple browser for this guide.</span></p>
+
+<p class=MsoNoSpacing style='margin-left:72.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>About...</span></b><span lang=EN-US> shows
+about box, which contains version, contact and licensing information for
+GraphRec.</span></p>
+
+<p class=MsoNoSpacing style='margin-left:72.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>About Qt...</span></b><span lang=EN-US> shows
+about box, which contains description and licensing information for Qt
+framework (used by GraphRec).</span></p>
+
+<p class=MsoNoSpacing style='margin-left:72.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>About FFmpeg...</span></b><span lang=EN-US>
+shows about box, which contains description and licensing information for
+FFmpeg video library (used by GraphRec).</span></p>
+
+<h2 style='margin-left:35.45pt;text-indent:-35.45pt'><a name="_Toc240554718"></a><a
+name="_Tool_Bar"></a><span lang=EN-US>2.2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US>Tool Bar</span></h2>
+
+<p class=MsoNoSpacing><span lang=EN-US>Application tool bar contains frequently
+used actions from main menu. These actions are (in order of appearance) <b>Open...</b>,
+<b>Save...</b>, <b>Manual (continuous)</b>, <b>Manual (discrete)</b>, <b>Automatic</b>,
+<b>Play</b>, <b>Step</b>, <b>Stop</b>, <b>Play All</b>, <b>Step All</b>, <b>Stop
+All</b>, <b>Snapshot...</b>, <b> Sequence...</b>. See <a href="#_Main_Menu"><span
+class=MsoSubtleReference>Main Menu</span></a> section for their description.
+Note that currently there is no possibility to add or remove actions from the
+tool bar. Tool bar can be enabled or disabled by <b>Window – Toolbar</b> in the
+main menu. It can be also moved over the screen or docked to arbitrary side of
+the application window.</span></p>
+
+<h2 style='margin-left:35.45pt;text-indent:-35.45pt'><a name="_Toc240554719"></a><a
+name="_Status_Bar"></a><span lang=EN-US>2.3<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US>Status Bar</span></h2>
+
+<p class=MsoNoSpacing><span lang=EN-US>Left side of the status bar contains
+additional information about current activity of the application. Messages can
+indicate idle state, file opening, file saving, validating, error detection,
+layouting, animating, capturing and image saving. Note that some of these
+messages can be displayed only for limited amount of time. Right side of the
+status bar shows description of currently selected validator. Note that
+validator should be also recognized by its specific default color set.</span></p>
+
+<h2 style='margin-left:35.45pt;text-indent:-35.45pt'><a name="_Tabs"></a><span
+lang=EN-US>2.4<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US>Tabs</span></h2>
+
+<p class=MsoNoSpacing><span lang=EN-US>Each opened graph is contained in its
+exclusive tab. Tab header contains close button and ID number of the graph.
+Context help of each tab contains name of its source file. Order of tabs in one
+tab group can be changed by mouse dragging. Note that it is not currently
+possible to drag and drop the tab from one tab group to another tab group. Tab
+groups are described in <a href="#_Tabs_and_Splitting"><span
+class=MsoSubtleReference>Window Splitting</span></a> section. Each tab contains
+horizontal slider and spin box, both of which are connected and specifies
+current time step of the solution scenario. In fact, horizontal slider should
+be considered as a time line, similarly to audio or video players. There are
+also two vertical sliders on the left. The upper one is intended for adjusting
+the speed of the animation. The lower one specifies the overall displacement of
+nodes – the value that is used as a hint by the active layouter. Consequently,
+in order to use this feature interactively you must first enable <b>Automatic</b>
+layouting mode.</span></p>
+
+<h2 style='margin-left:35.45pt;text-indent:-35.45pt'><a name="_Toc240554720"></a><a
+name="_Tabs_and_Splitting"></a><a name="_Tabs_and_Window"></a><a
+name="_Window_Splitting"></a><span lang=EN-US>2.5<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US>Window Splitting</span></h2>
+
+<p class=MsoNoSpacing><span lang=EN-US>To provide a way to work with more tabs
+at a time, it is possible to split initial set of tabs into more groups. Tab
+group must contain at least two tabs or it is not possible to split it.
+Splitting can be stacked horizontally (<b>Window – Split Horizontally</b>) or
+vertically (<b>Window – Split Vertically</b>). Before splitting, it is
+necessary to select tab that will be the first one in new group. Note that splitting
+is not possible if you select the first tab, because new tab group would be the
+same as the current one. After the group is split, you are free to do further
+sub splitting, which effectively results in a binary tree hierarchy. Window
+space for each tab group can be adjusted by dragging dividers between them. Note
+that when there is more than one tab visible, user interface still controls
+only single tab (the one that has focus). To switch focus between tabs just
+click anywhere into their window area. Active tab is always emphasized by the
+surrounding frame. There is also inverse operation to splitting. Tab groups can
+be rejoined by <b>Window – Unsplit</b>. Note that before unsplitting, you must
+first give focus to any tab in one of the two tab groups you want to join.
+Since any of these two tab groups can be already sub split, it is recursively
+joined to the bottom of the tree hierarchy. In order to rejoin all tab groups
+into single flat tab group just click on <b>Window – Unsplit All</b>. See also <a
+href="#_Tabs"><span class=MsoSubtleReference>Tabs</span></a> section for more
+information.</span></p>
+
+<h1 style='margin-left:1.0cm;text-indent:-1.0cm'><a name="_Toc240554721"></a><a
+name="_Controls"></a><span lang=EN-US>3<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US>Controls</span></h1>
+
+<h2 style='margin-left:35.45pt;text-indent:-35.45pt'><a name="_Toc240554722"></a><a
+name="_Mouse"></a><span lang=EN-US>3.1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US>Mouse</span></h2>
+
+<p class=MsoNoSpacing><span lang=EN-US>This section provides description of
+mouse usage in GraphRec, which is not obvious at the first sight. This
+includes:</span></p>
+
+<p class=MsoNoSpacing style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>Moving </span></b><span lang=EN-US>nodes in
+graph view by clicking on them and dragging them while holding left mouse
+button. Not working while animation is running.</span></p>
+
+<p class=MsoNoSpacing style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>Scrolling</span></b><span lang=EN-US> of
+graph view by clicking into free space and dragging while holding left mouse
+button.</span></p>
+
+<p class=MsoNoSpacing style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>Zooming</span></b><span lang=EN-US> graph
+view by mouse wheel.</span></p>
+
+<p class=MsoNoSpacing style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>Selecting</span></b><span lang=EN-US> nodes
+by holding <i>Ctrl</i> key and clicking them or dragging selection frame over
+them while holding left mouse button. Note that if you want to move selected
+group of nodes, you must still hold the <i>Ctrl</i> key during operation
+otherwise nodes will be unselected.</span></p>
+
+<h2 style='margin-left:35.45pt;text-indent:-35.45pt'><a name="_Toc240554723"></a><a
+name="_Keyboard"></a><span lang=EN-US>3.2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US>Keyboard</span></h2>
+
+<p class=MsoNoSpacing style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>Scrolling</span></b><span lang=EN-US> graph
+view by arrow keys.</span></p>
+
+<p class=MsoNoSpacing style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>Moving </span></b><span lang=EN-US>graph
+itself by <i>IKJL</i> keys (not allowed in <b>Automatic</b> layouting mode).</span></p>
+
+<p class=MsoNoSpacing style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>Rotating</span></b><span lang=EN-US> graph
+itself by <i>AD</i> keys (not allowed in <b>Automatic</b> layouting mode).</span></p>
+
+<p class=MsoNoSpacing style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>Zooming</span></b><span lang=EN-US> graph
+view by <i>WS</i> keys.</span></p>
+
+<p class=MsoNoSpacing style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>Random</span></b><span lang=EN-US> positions
+for nodes by pressing <i>R</i> key.</span></p>
+
+<p class=MsoNoSpacing style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>Selecting</span></b><span lang=EN-US> nodes
+by holding <i>Ctrl</i> key and clicking them or dragging selection frame over
+them while holding left mouse button. Note that if you want to move selected
+group of nodes, you must still hold the <i>Ctrl</i> key during operation
+otherwise nodes will be unselected.</span></p>
+
+<h1 style='margin-left:1.0cm;text-indent:-1.0cm'><a name="_Toc240554724"></a><a
+name="_Validating_Solution"></a><span lang=EN-US>4<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US>Validating Solution</span></h1>
+
+<p class=MsoNoSpacing><span lang=EN-US>Each solution scenario is validated by
+selected validator during file loading. Validator checks whether all entity
+movements are valid and non-conflicting. All incorrect movements are logged and
+marked so the animation engine would ignore them. If there are any errors, the
+notification will appear in the status bar. GraphRec currently provides two
+validators:</span></p>
+
+<p class=MsoNoSpacing style='margin-left:39.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>Pebble</span></b><span lang=EN-US> validator
+for <i>pebble motion on graph</i>. The movement is valid if and only if there
+is an edge between source and destination node, if there is an entity in the
+source node and if the destination node is free in the time step just before
+the movement.</span></p>
+
+<p class=MsoNoSpacing style='margin-left:39.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>Multirobot</span></b><span lang=EN-US>
+validator for <i>multirobot path planning</i>. The movement is valid if and
+only if there is an edge between source and destination node, if there is an
+entity in the source node and if the destination node is already free or freed
+in the same time step as the movement occurs. Note that this definition permits
+chain movements of multiple entities.</span></p>
+
+<p class=MsoNoSpacing><span lang=EN-US>Validator can be changed by <b>Validation
+– Validator</b> menu or by <b>Setup – Options... </b>(see <a href="#_Settings"><span
+class=MsoSubtleReference>Settings</span></a>). Errors can be reviewed in
+special dialog accessible through <b>Validation – Log...</b> menu action. Whole
+log can be saved into text file. Each line in the error log specifies single
+problem. It consists of time step specification, movement details and error
+description. Movement details are logged in the format </span><span lang=EN-US
+style='font-family:"Courier New"'>SN(E1) ---&gt; DN(E2)</span><span lang=EN-US>,
+where </span><span lang=EN-US style='font-family:"Courier New"'>SN</span><span
+lang=EN-US> stands for <i>source node ID</i>, </span><span lang=EN-US
+style='font-family:"Courier New"'>DN</span><span lang=EN-US> for <i>destination
+node ID</i> and both </span><span lang=EN-US style='font-family:"Courier New"'>E1</span><span
+lang=EN-US> and </span><span lang=EN-US style='font-family:"Courier New"'>E2</span><span
+lang=EN-US> are ID numbers of entities that occupy respective nodes before the invalid
+movement. Note that entity IDs less or equal zero are reserved for empty nodes.
+Errors can be visually tracked down by clicking on log entries – corresponding
+time step is set and affected nodes are highlighted.</span></p>
+
+<p class=MsoNoSpacing><b><span lang=EN-US>Note: </span></b><span lang=EN-US>If
+you find yourself studying grammar, input file or error log in detail, you
+should know that arrow displayed in each movement definition is not always indicating
+direction of movement. Movement, if valid, can occur also in the opposite
+direction than suggested by the arrow. This exception applies only to isolated
+movements allowed by <b>Pebble</b> and <b>Multirobot</b> validator. Chain
+movements are not affected. </span><span lang=EN-US>This inconveniency is
+caused by file format that is shared between GraphRec and planning software,
+which </span><b><span lang=EN-US>Pebble</span></b><span lang=EN-US> and <b>Multirobot</b>
+validator were written for.</span></p>
+
+<h1 style='margin-left:1.0cm;text-indent:-1.0cm'><a name="_Toc240554725"></a><a
+name="_Layouting_Graph"></a><span lang=EN-US>5<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US>Layouting Graph</span></h1>
+
+<p class=MsoNoSpacing><span lang=EN-US>Generally, initial positions of graph
+nodes are random. However, if the graph is biconnected and input file specifies
+its circles, nodes are aligned into lines that correspond to those circles. In
+most cases, the initial layout should be further modified. Usually, the first
+step to improve layout is to enable automatic layouter, which will iteratively
+modify the layout by its embedded algorithm. Layouter can be chosen from <b>Layout
+– Layouter</b> menu or by <b>Setup – Options... </b>(see <a href="#_Settings"><span
+class=MsoSubtleReference>Settings</span></a>). To enable selected layouter, toggle
+<b>Layout – Mode – Automatic</b>. GraphRec currently provides two layouters:</span></p>
+
+<p class=MsoNoSpacing style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>Fruchterman-Reingold</span></b><span
+lang=EN-US> layouter belongs to the group of force-directed layouters. Nodes
+behave as repulsive particles whereas edges behave like springs. Since main
+principle is based on physical laws, layouter is very good predictable and
+intuitive. Layout is elastic and can be influenced by dragging nodes during
+layouting. Layouter is especially suitable for graphs containing grid or some
+repetitive pattern. </span></p>
+
+<p class=MsoNoSpacing style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>Kamada-Kawai</span></b><span lang=EN-US>
+layouter is also force-directed. One at a time, node is hooked by springs to
+the anchored rest and gradually moved to the equilibrium. Since nodes are not
+updated all at once, layouter is less predictable and intuitive. Layout is almost
+non-elastic and thus not very interactive. Generally, Kamada-Kawai is slower
+but provides slightly better layout, especially for non-grid graphs, because it
+defines ideal distances between all nodes (in comparison with
+Fruchterman-Reingold, where ideal distance is defined only between adjacent
+nodes). </span></p>
+
+<p class=MsoNoSpacing><span lang=EN-US>Automatic layouters have usually more
+than one local minimum at which layout is considered done. If current local
+minimum is not good, it helps to move nodes to its desired positions while the
+layouter is still enabled. This action will usually results in finding another,
+probably better, local minimum. It is also possible to start again with random
+layout either by pressing <i>R</i> key or by clicking <b>Layout – Recalculate</b>.
+Another way to interact with layouter during its work is to change node
+displacement by the vertical slider on the lower left side of the graph view. Sliding
+the displacement up and down for a few times may remove little imperfections in
+the layout, especially in the case of grid graphs. </span></p>
+
+<p class=MsoNoSpacing><span lang=EN-US>After the automatic layout is finished,
+it is recommended to switch to either <b>Layout – Mode – Manual (continuous)</b>
+or <b>Layout – Mode – Manual (discrete) </b>and to refine the layout further.
+At this point, graph will probably need some zooming, scrolling, rotating and
+node moving (all described in <a href="#_Controls"><span
+class=MsoSubtleReference>Controls</span></a>). Whereas continuous mode gives no
+restrictions on node positioning, discrete mode allows only positions defined
+by its background grid. Granularity of background grid can be changed in <b>Setup
+– Options... </b>(see <a href="#_Settings"><span class=MsoSubtleReference>Settings</span></a>).
+Discrete mode is intended for layouts that need exact orthogonality for
+esthetic purposes. Before aligning nodes manually to the grid, you may find
+useful <b>Layout – Snap to Grid</b>, which aligns all nodes to the closest
+valid position in the grid.</span></p>
+
+<h1 style='margin-left:1.0cm;text-indent:-1.0cm'><a name="_Toc240554726"></a><a
+name="_Settings"></a><span lang=EN-US>6<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US>Settings</span></h1>
+
+<p class=MsoNoSpacing><span lang=EN-US>Configuration can be changed in the
+dialog accessible through <b>Setup – Options...</b> in the main menu. Note that
+settings are propagated only to the tab that has focus. If you want to change
+settings globally, hit the <b>Save Default</b> button, close/save all tabs and
+reload them. Explanation of configuration items follows:</span></p>
+
+<p class=MsoNoSpacing style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>Animation</span></b></p>
+
+<p class=MsoNoSpacing style='margin-left:72.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>Length</span></b><span lang=EN-US> of single
+time step in milliseconds.</span></p>
+
+<p class=MsoNoSpacing style='margin-left:72.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>Style</span></b><span lang=EN-US> of the
+animation progress. <i>Linear<b> </b></i>animation has same speed all the time
+whereas <i>EasyInOut</i> animation starts slowly, then goes steady and finish
+slowly.</span></p>
+
+<p class=MsoNoSpacing style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>Layout</span></b></p>
+
+<p class=MsoNoSpacing style='margin-left:72.0pt;text-align:justify;text-justify:
+inter-ideograph;text-indent:-18.0pt'><span lang=EN-US style='font-family:"Courier New"'>o<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><b><span
+lang=EN-US>Layouting mode </span></b><span lang=EN-US>determines whether the
+layout will be done automatically or manually. See <a href="#_Layouting_Graph"><span
+class=MsoSubtleReference>Layouting Graph</span></a> for more information.</span></p>
+
+<p class=MsoNoSpacing style='margin-left:72.0pt;text-align:justify;text-justify:
+inter-ideograph;text-indent:-18.0pt'><span lang=EN-US style='font-family:"Courier New"'>o<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><b><span
+lang=EN-US>Layouter</span></b><span lang=EN-US> shows list of available
+layouters. See <a href="#_Layouting_Graph"><span class=MsoSubtleReference>Layouting
+Graph</span></a> for more information.</span></p>
+
+<p class=MsoNoSpacing style='margin-left:72.0pt;text-align:justify;text-justify:
+inter-ideograph;text-indent:-18.0pt'><span lang=EN-US style='font-family:"Courier New"'>o<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><b><span
+lang=EN-US>Node displacement</span></b><span lang=EN-US> serves as a hint for
+layouter. Should be used for exact value specification. For interactive
+alteration of node displacement, it is better to use vertical slider on the
+left side of the graph view.</span></p>
+
+<p class=MsoNoSpacing style='margin-left:72.0pt;text-align:justify;text-justify:
+inter-ideograph;text-indent:-18.0pt'><span lang=EN-US style='font-family:"Courier New"'>o<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><b><span
+lang=EN-US>Grid offset</span></b><span lang=EN-US> defines the granularity of
+background grid, which is enabled during discrete layouting mode.</span></p>
+
+<p class=MsoNoSpacing style='margin-left:36.0pt;text-align:justify;text-justify:
+inter-ideograph;text-indent:-18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>Validation</span></b></p>
+
+<p class=MsoNoSpacing style='margin-left:72.0pt;text-align:justify;text-justify:
+inter-ideograph;text-indent:-18.0pt'><span lang=EN-US style='font-family:"Courier New"'>o<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><b><span
+lang=EN-US>Validator</span></b><span lang=EN-US> shows list of available
+validators. See <a href="#_Validating_Solution"><span class=MsoSubtleReference>Validating
+Solution</span></a> for more information.</span></p>
+
+<p class=MsoNoSpacing style='margin-left:36.0pt;text-align:justify;text-justify:
+inter-ideograph;text-indent:-18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>Visual</span></b></p>
+
+<p class=MsoNoSpacing style='margin-left:72.0pt;text-align:justify;text-justify:
+inter-ideograph;text-indent:-18.0pt'><span lang=EN-US style='font-family:"Courier New"'>o<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><b><span
+lang=EN-US>Node description</span></b><span lang=EN-US> determines what should
+be displayed on the surface of the nodes in graph view. Node labels can be
+either empty or can contain various combinations of entity and node
+identification numbers.</span></p>
+
+<p class=MsoNoSpacing style='margin-left:72.0pt;text-align:justify;text-justify:
+inter-ideograph;text-indent:-18.0pt'><span lang=EN-US style='font-family:"Courier New"'>o<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><b><span
+lang=EN-US>Controls visibility</span></b><span lang=EN-US> enables or disables sliders
+and spin box in graph view.</span></p>
+
+<p class=MsoNoSpacing style='margin-left:72.0pt;text-align:justify;text-justify:
+inter-ideograph;text-indent:-18.0pt'><span lang=EN-US style='font-family:"Courier New"'>o<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><b><span
+lang=EN-US>Interactive capturing</span></b><span lang=EN-US> determines whether
+user is able to interact (e.g. zooming, scrolling) with graph view during video
+or image sequence capturing. If disabled, capturing is indicated only by
+progress bar and graph view is not rendered in order to speed up video
+encoding.</span></p>
+
+<h1 style='margin-left:1.0cm;text-indent:-1.0cm'><a name="_Toc240554727"></a><a
+name="_Coloring_Graph_Elements"></a><span lang=EN-US>7<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US>Coloring Graph Elements</span></h1>
+
+<p class=MsoNoSpacing><span lang=EN-US>Graph colors can be adjusted in dialog
+displayed after clicking on <b>Setup – Colors...</b> menu entry. First, choose
+graph element type you would like to color from the tabbed panel on the left.
+Then select one or multiple items from the list. List items can be multi
+selected by mouse dragging or by holding <i>Ctrl</i>/<i>Shift</i> and left
+mouse clicking. To select all items hit the <b>Select All</b> button. Since
+dialog is not modal, it is also possible to switch back to main window and
+select graph nodes by holding <i>Ctrl</i> and left mouse button while dragging
+mouse over them – selection will be propagated into color dialog. List can be
+also sorted by any column, which makes it easier to select all items of the
+same color etc. After selecting desired set of items, click on <b>Set Color</b>
+button and choose what color you would like to change. Note that this can be
+also achieved by right mouse clicking anywhere into selected set of items.
+After clicking on appropriate color type, you can choose exact color in
+standard dialog for color picking. Both nodes and entities have its background
+and foreground color. Foreground color is used for labels displayed in nodes
+and thus should be in contrast with background color. Moreover, entities have
+another pair of colors used for their final state. Final state of entity is
+reached after its last movement in the solution scenario. This color differentiation
+is used to emphasize what entities will be moving in the future and what
+entities are already in their final destinations. </span></p>
+
+<p class=MsoNoSpacing><span lang=EN-US>Special explanation should be given to
+the third tab with <i>Graph</i> label. List in the third tab is intended for colors
+that are more general:</span></p>
+
+<p class=MsoNoSpacing style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>Edge highlight</span></b><span lang=EN-US> is
+a color used for wide line rendered under all edges with moving entities. If
+the color is bright and in contrast with other colors, it effectively improves
+global notion of entity movement and makes it easier to see how path-planning
+strategy works.</span></p>
+
+<p class=MsoNoSpacing style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>Graph background</span></b><span lang=EN-US>
+is a color used for background of the whole graph view.</span></p>
+
+<p class=MsoNoSpacing style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>Outlines and edges</span></b><span
+lang=EN-US> is a color used for all lines that represent edges and node
+boundaries. This color should be in very strong contrast with graph background.</span></p>
+
+<h1 style='margin-left:1.0cm;text-indent:-1.0cm'><a name="_Toc240554728"></a><a
+name="_Saving_Output_File"></a><span lang=EN-US>8<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US>Saving Output File</span></h1>
+
+<p class=MsoNoSpacing><span lang=EN-US>Current tab can be saved to file by
+clicking on <b>File – Save...</b> menu entry and choosing appropriate file
+format. Information that will be saved depend on chosen file format but should
+include graph definition, solution scenario, node positions, coloring, current
+view and chosen validator. If you want to save all opened tabs into single file
+at once just click on <b>File – Save All...</b> menu entry.</span></p>
+
+<h1 style='margin-left:1.0cm;text-indent:-1.0cm'><a name="_Toc240554729"></a><a
+name="_Controlling_Animation"></a><span lang=EN-US>9<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US>Controlling Animation</span></h1>
+
+<p class=MsoNoSpacing><span lang=EN-US>Actions for animation control are all
+accessible in <b>Animation</b> menu. Frequently used actions are also pinned to
+the tool bar. All actions are divided into two groups – first group is intended
+for controlling tab that has currently focus (e.g. <b>Play</b>) whereas the second
+group controls all foreground tabs (e.g. <b>Play All</b>). Second group is
+especially useful when there is a need to compare two similar scenarios – it is
+possible to play them or step through them while seeing them both at once. </span></p>
+
+<p class=MsoNoSpacing><span lang=EN-US>Whole solution scenario consists of several
+time steps that can be played through (<b>Play</b>/<b>Play All</b>) or stepped
+through (<b>Step</b>/<b>Step All</b>). If you want to play animation from one
+particular time step, click on <b>Seek...</b>/<b>Seek All...</b> menu entry and
+specify it. Other possibility is to slide the horizontal slider on the top side
+of graph view or enter exact time step into the spin box located in the top
+left corner of graph view. Animation speed can be adjusted by the vertical
+slider on the upper left side of the graph view. Animation can be stopped any
+time by clicking on <b>Stop</b>/<b>Stop All</b> button. Just note that
+currently animated time step have to be finished so if the animation length was
+set too long, this might take a while. In order to rewind whole scenario back
+to the beginning, set time step to zero or click <b>Reset</b>/<b>Reset All</b>
+button.</span></p>
+
+<p class=MsoNoSpacing><span lang=EN-US>Running more parallel animations by <b>Play
+All</b> can be done in two modes by toggling <b>Synchronize All</b>:</span></p>
+
+<p class=MsoNoSpacing style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>Synchronized</span></b><span lang=EN-US>
+animation is suitable for tabs, which animation durations are equal.
+Synchronization ensures that tabs are timed collectively. Note that when
+synchronizing tabs with different animation duration, all tabs must wait for
+the slowest one on the every time step.</span></p>
+
+<p class=MsoNoSpacing style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>Non-synchronized</span></b><span lang=EN-US> animation
+is suitable for tabs, which animation durations are different. In this mode,
+tabs are timed independently. This implies that two parallel animations with
+the same duration might get slightly desynchronized after a few time steps.</span></p>
+
+<h1 style='margin-left:1.0cm;text-indent:-1.0cm'><a name="_Toc240554730"></a><a
+name="_Capturing_Media_Files"></a><span lang=EN-US>10<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US>Capturing Media Files</span></h1>
+
+<p class=MsoNoSpacing><span lang=EN-US>GraphRec provides two ways to capture
+media files. There is a possibility to take raster and vector screenshots of
+graph view through <b>Animation – Snapshot...</b> dialog or to capture image
+sequences and video through <b>Animation – Sequence...</b> dialog. Dialog is
+almost the same for both actions. The only difference is that in the sequence
+mode it is possible to select video encoder and some additional settings.
+Dialog items are explained in the following list:</span></p>
+
+<p class=MsoNoSpacing style='margin-left:39.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>Encoder</span></b><span lang=EN-US> shows a
+list of available media encoders. When the encoder is selected, its settings
+are shown on the right side of the dialog. Raster and vector encoders are
+described in <a href="#_Images"><span class=MsoSubtleReference>Images</span></a>
+section whereas the only one video encoder, FFmpeg, is described in <a
+href="#_Video_Standards"><span class=MsoSubtleReference>Video Standards</span></a>
+and <a href="#_Video_Settings"><span class=MsoSubtleReference>Video Settings</span></a>
+sections.</span></p>
+
+<p class=MsoNoSpacing style='margin-left:39.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>Width</span></b><span lang=EN-US> of
+resulting image or video (in pixels).</span></p>
+
+<p class=MsoNoSpacing style='margin-left:39.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>Height</span></b><span lang=EN-US> of
+resulting image or video (in pixels).</span></p>
+
+<p class=MsoNoSpacing style='margin-left:39.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>Start</span></b><span lang=EN-US> specifies
+the time step when the capturing begins. (available only in sequence mode)</span></p>
+
+<p class=MsoNoSpacing style='margin-left:39.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>Stop</span></b><span lang=EN-US> specifies
+the time step when the capturing stops (resulting media will not include this
+time step). (available only in sequence mode)</span></p>
+
+<p class=MsoNoSpacing style='margin-left:39.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>Interval</span></b><span lang=EN-US>
+determines amount of time steps that will be skipped between two captured
+images in sequence mode. For example if the interval is set to 3, only every fourth
+time step will be captured. (available only in sequence mode for non-video
+encoders)</span></p>
+
+<p class=MsoNoSpacing style='margin-left:39.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>Name</span></b><span lang=EN-US> of the
+resulting media file. If location already contains file with such a name, the
+specified name will be extended with numeral and thus no data will be
+overwritten.</span></p>
+
+<p class=MsoNoSpacing style='margin-left:39.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>Path</span></b><span lang=EN-US> to the
+destination directory for media files. Be sure there is enough free space when
+capturing video.</span></p>
+
+<p class=MsoNoSpacing><span lang=EN-US>If all settings are set, capturing can
+be started by hitting <b>Capture</b> button. What happens next depends on
+settings. In the snapshot mode, image is simply saved and notification is
+displayed in status bar. Dialog is not closed and thus ready to take as many
+images as needed. Note that in snapshot mode, dialog is modal so you are free
+to interact with rest of the application. This is convenient for taking images
+during animation. It is suggested to increase animation length so it would be
+easier to take image at the intended moment.</span></p>
+
+<p class=MsoNoSpacing><span lang=EN-US>Sequence mode behaves differently.
+Dialog is not modal so it is not possible to interact with rest of application.
+After the <b>Capture</b> button is clicked, dialog is closed and encoding
+starts from specified starting time step and runs until manually stopped or the
+stopping time step is reached. If capturing was set to be interactive in the <a
+href="#_Settings"><span class=MsoSubtleReference>Settings</span></a>, it is
+possible to interact with graph view during encoding (e.g. zooming, scrolling).
+Note however that when capturing interactively, animation speed depends on
+speed of CPU and does not match real time. If the interactive capturing is
+disabled, graph view is not rendered in order to increase performance. In this
+case, only simple progress bar informs about status of the encoding job.</span></p>
+
+<p class=MsoNoSpacing><b><span lang=EN-US>Note:</span></b><span lang=EN-US>
+When capturing sequence with image encoders, images are taken only between time
+steps. This means that if capturing consists of ten time steps, only ten images
+will be saved to destination directory. File names of these images will contain
+time step number.</span></p>
+
+<p class=MsoNoSpacing><b><span lang=EN-US>Note:</span></b><span lang=EN-US>
+Resulting image or video frame does not necessarily match visible area of graph
+view in the time of capturing. This is due to selected resolution that, in most
+cases, has different aspect ratio than visible area of graph view. At first, capturing
+frame is aligned to the top left corner of graph view and then either its width
+or height is increased to match output ratio. This ensures that resulting image
+will certainly contain intended part of graph view and will have correct aspect
+ratio. </span></p>
+
+<h2 style='margin-left:35.45pt;text-indent:-35.45pt'><a name="_Toc240554731"></a><a
+name="_Images"></a><span lang=EN-US>10.1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US>Images</span></h2>
+
+<p class=MsoNoSpacing><span lang=EN-US>GraphRec currently supports encoding to
+three raster formats (PNG, JPG, BMP) and one vector format (SVG). Raster
+formats are included in <i>Raster Image e</i>ncoder. The only possible setting
+for raster image is to adjust quality of the output. SVG format is provided by <i>SVG
+Generator<b> </b></i>encoder. Pay attention to the settings of resolution and
+DPI, because inappropriate values may result in very thin or very wide strokes
+in resulting vector image. To avoid this you should increase resolution when
+increasing DPI and vice versa. </span></p>
+
+<h2 style='margin-left:35.45pt;text-indent:-35.45pt'><a name="_Toc240554732"></a><a
+name="_Video_Standards"></a><span lang=EN-US>10.2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US>Video Standards</span></h2>
+
+<p class=MsoNoSpacing><span lang=EN-US>This section provides list of standard
+settings, which should be accepted by FFmpeg codecs. Codecs, such as H.263 or
+RV10, are especially strict on offered settings. On the contrary, MPEG codecs
+provide much more freedom in custom settings selection. Note also that visual
+output provided by GraphRec is less complex and more static in comparison with
+real life movies. Due to this fact, it is convenient to use lower bitrates than
+suggested ones in order to save additional space.</span></p>
+
+<p class=MsoNoSpacing style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>MPEG4</span></b></p>
+
+<p class=MsoNoSpacing style='margin-left:72.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>High Definition</span></b><span lang=EN-US>,
+1280x720x30fps, 1280x720x25fps, 8000 kbps</span></p>
+
+<p class=MsoNoSpacing style='margin-left:72.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>Home Theater</span></b><span lang=EN-US>,
+720x480x30fps, 720x576x25fps, 4000 kbps</span></p>
+
+<p class=MsoNoSpacing style='margin-left:72.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>Portable</span></b><span lang=EN-US>,
+640x480x30fps, 640x480x25fps, 352x240x30fps, 352x288x25fps, 768kbps</span></p>
+
+<p class=MsoNoSpacing style='margin-left:72.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>Handheld</span></b><span lang=EN-US>,
+176x144x15fps, 200 kbps</span></p>
+
+<p class=MsoNoSpacing style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>MPEG2</span></b></p>
+
+<p class=MsoNoSpacing style='margin-left:72.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>HD 1080p</span></b><span lang=EN-US>,
+1920x1080x30fps, 1920x1080x25fps, 15000 kbps</span></p>
+
+<p class=MsoNoSpacing style='margin-left:72.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>HD 720p</span></b><span lang=EN-US>,
+1280x720x30fps, 1280x720x25fps, 9000 kbps</span></p>
+
+<p class=MsoNoSpacing style='margin-left:72.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>DVD</span></b><span lang=EN-US>,
+720x480x30fps, 720x576x25fps, 4000 kbps</span></p>
+
+<p class=MsoNoSpacing style='margin-left:72.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>SVCD</span></b><span lang=EN-US>,
+480x480x30fps, 480x576x25fps, 2376 kbps</span></p>
+
+<p class=MsoNoSpacing style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>MPEG1</span></b></p>
+
+<p class=MsoNoSpacing style='margin-left:72.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>VCD</span></b><span lang=EN-US>,
+352x240x30fps, 352x288x25fps, 1150 kbps</span></p>
+
+<p class=MsoNoSpacing style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>RV10</span></b></p>
+
+<p class=MsoNoSpacing style='margin-left:72.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>Download</span></b><span lang=EN-US>,
+640x480x30fps, 1000 kbps</span></p>
+
+<p class=MsoNoSpacing style='margin-left:72.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>Broadband</span></b><span lang=EN-US>,
+560x420x30fps, 650 kbps</span></p>
+
+<p class=MsoNoSpacing style='margin-left:72.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>Midband</span></b><span lang=EN-US>,
+320x240x15fps, 300 kbps</span></p>
+
+<p class=MsoNoSpacing style='margin-left:72.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>Narrowband</span></b><span lang=EN-US>,
+192x144x8fps, 100 kbps</span></p>
+
+<p class=MsoNoSpacing style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>FLV1</span></b></p>
+
+<p class=MsoNoSpacing style='margin-left:72.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>Best</span></b><span lang=EN-US>,
+320x240x25fps, 1200 kbps</span></p>
+
+<p class=MsoNoSpacing style='margin-left:72.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>Normal</span></b><span lang=EN-US>,
+320x240x25fps, 960 kbps</span></p>
+
+<p class=MsoNoSpacing style='margin-left:72.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>Optimal</span></b><span lang=EN-US>,
+352x288x15fps, 780 kbps</span></p>
+
+<p class=MsoNoSpacing style='margin-left:72.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>Low</span></b><span lang=EN-US>,
+320x240x15fps, 640 kbps</span></p>
+
+<p class=MsoNoSpacing style='margin-left:72.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>Least</span></b><span lang=EN-US>,
+176x144x15fps, 480 kbps</span></p>
+
+<p class=MsoNoSpacing style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>H.263</span></b></p>
+
+<p class=MsoNoSpacing style='margin-left:72.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>Extended</span></b><span lang=EN-US>,
+176x144x15fps, 240 kbps</span></p>
+
+<p class=MsoNoSpacing style='margin-left:72.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>Highest</span></b><span lang=EN-US>,
+176x144x15fps, 104 kbps</span></p>
+
+<p class=MsoNoSpacing style='margin-left:72.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>Standard</span></b><span lang=EN-US>, 176x144x12fps,
+64 kbps</span></p>
+
+<p class=MsoNoSpacing style='margin-left:72.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>Balanced</span></b><span lang=EN-US>,
+128x96x10fps, 140 kbps</span></p>
+
+<p class=MsoNoSpacing style='margin-left:72.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>Smallest</span></b><span lang=EN-US>,
+128x96x10fps, 44 kbps</span></p>
+
+<h2 style='margin-left:35.45pt;text-indent:-35.45pt'><a name="_Toc240554733"></a><a
+name="_Video_Settings"></a><span lang=EN-US>10.3<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US>Video Settings</span></h2>
+
+<p class=MsoNoSpacing><span lang=EN-US>Currently only two additional parameters
+are provided by user interface:</span></p>
+
+<p class=MsoNoSpacing style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>GOP (Group of Pictures)</span></b><span
+lang=EN-US> – Distance between two <i>I-frames</i> (images containing full information).
+Note that standard MPEG1/2 is constrained by relatively small GOP sizes (18 for
+30fps, 15 for 25fps). Other formats should be used with GOP set between 100 and
+300 frames.</span></p>
+
+<p class=MsoNoSpacing style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>Buffer</span></b><span lang=EN-US> – Size of
+the internal buffer, which is used by chosen codec to encode frames. Default
+size is 8MB, which should be enough for all reasonable settings. However, if
+you plan to encode video in extremely high resolutions or bitrates, size should
+be increased to avoid corrupted video.</span></p>
+
+<p class=MsoNoSpacing><b><span lang=EN-US>Note:</span></b><span lang=EN-US> Advanced
+settings are currently hidden from user in order to keep things simple. These
+settings are set internally to provide best quality at reasonable encoding time
+and decoding performance. For MPEG4 in particular, this means, that GMC (<i>Global
+Motion Compensation</i>), AIC (<i>Advanced Intra Coding</i>) and MV4 (<i>four
+Motion Vectors by macro block</i>) are enabled. General settings for all codecs
+is also set to higher values (this includes <i>macro block decision algorithm</i>,
+<i>motion estimation comparison function</i>, <i>Trellis quantization</i>).
+Number of <i>B-frames</i> (bi-directional frames) is set to two frames per GOP
+for MPEG4 and MPEG2 (other codecs uses their default count).</span></p>
+
+<h1 style='margin-left:1.0cm;text-indent:-1.0cm'><a name="_Toc240554734"></a><a
+name="_File_Format"></a><span lang=EN-US>11<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US>Multirobot File Format</span></h1>
+
+<p class=MsoNoSpacing><span lang=EN-US>This part of guide is intended only for
+advanced users who are going to create format converters or edit input files
+manually. If you have programming skills, note that GraphRec can be extended to
+include more format parsers (implementation details are described in <i>Programmer’s
+Documentation</i>). <i>Multirobot </i>file format is the initial format
+supported by GraphRec. It is derived from the output of <i>multirobot</i>, the
+software for solving <i>multirobot path planning</i> and <i>pebble motion on
+graph</i>, developed by RNDr. Pavel Surynek, Ph.D. (<a
+href="http://ktiml.mff.cuni.cz/~surynek/"><span class=MsoSubtleReference>http://ktiml.mff.cuni.cz/~surynek/</span></a>).
+Format specification consists of <a href="#_Grammar"><span
+class=MsoSubtleReference>Grammar</span></a> and <a href="#_Example"><span
+class=MsoSubtleReference>Description</span></a> of values that are relevant for
+GraphRec. </span></p>
+
+<p class=MsoNoSpacing><span lang=EN-US>Format specification consists of grammar
+(in <i>Extended Backus–Naur Form</i> with case insensitive terminals) and its
+semantic description. Note that there are fields defined by grammar but
+irrelevant for GraphRec. When it happens that whole line is irrelevant, it is
+not even specified by the grammar and considered as an auxiliary non-terminal.
+Since auxiliary non-terminal has no exact specification, grammar should be used
+only as a reference due to its incompleteness. It can be assumed that line
+standing behind auxiliary non-terminal cannot interfere with the rest of the
+grammar. GraphRec puts also some optional extensions to the original format.
+These extensions include information about node positions, graph coloring,
+viewport state and validation mode. GraphRec can open either original or
+extended file but can save only extended file.</span></p>
+
+<h2 style='margin-left:35.45pt;text-indent:-35.45pt'><a name="_Toc240554735"></a><a
+name="_Grammar"></a><span lang=EN-US>11.1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US>Grammar</span></h2>
+
+<p class=MsoNoSpacing style='margin-left:35.4pt'><span lang=EN-US
+style='font-family:"Courier New"'>file = { graph } , '&lt;EOF&gt;' ;<br>
+graph = { aux } , [ id ] , <br>
+        { aux } , vertex block ,<br>
+        { aux } , edge block ,<br>
+        { aux } , [ circle block ] ,<br>
+        { aux } , [ validator block ] ,<br>
+        { aux } , [ color block ] ,<br>
+        { aux } , [ position block ] ,<br>
+        { aux } , solution block ,<br>
+        { aux } , length ,<br>
+        { aux } ;<br>
+id = 'id:' , uint , nl ;<br>
+vertex block = 'V =' , nl , { vertex }, nl ;<br>
+vertex = '(' , uint , ':' , uint , ')' ,<br>
+         '[' , sint , ':' , sint , ':' , sint '] ' ,<br>
+         { uintwh } , nl ;<br>
+edge block = 'E =' , nl , { edge }, nl ;<br>
+edge= '{' , uint , ',' , uint , '} (' , uint , ')' , nl ;<br>
+circle block = 'C =' , nl , { circle }, nl ;<br>
+circle = uintwh , '(' , uint , ',' , uint , '): ' , { uintwh } ,<br>
+         ' [' , { uintwh } , '] ' , '{' , { uintwh } , '}' , nl ;<br>
+validator block = 'MOD =' , nl , ( 'M:IMMEDIATE' | 'M:TRANSITIVE' ) , nl ;<br>
+color block = 'COL =' , nl , [ scene ] , [ borders ] ,<br>
+              [ highlight ] , { color } , nl ;<br>
+scene = 'B_SCN:A:' , color value , nl ;<br>
+borders = 'P_BRD:A:' , color value , nl ;<br>
+highlight = 'P_HLT:A:' , color value , nl ;<br>
+color = ( 'B' | 'P' ) , '_' , ( 'EMP' | 'INH' | 'FIN' ) ,<br>
+        ':' , uint , ':' , color value , nl ;<br>
+position block = 'POS =' , nl , [ matrix ] , [ angle ] ,<br>
+                 [ center ] , { position } , nl ;<br>
+matrix = '</span><span lang=EN-US> </span><span lang=EN-US style='font-family:
+"Courier New"'>MATRIX:' , float , ':' , float , ':' , float , ':' ,<br>
+         float , ':' , float , ':' , float , nl ;<br>
+angle = 'ANGLE:' , float , nl ;<br>
+center = 'CENTER:X' , float , ':Y' , float , nl ;<br>
+position = uint , ':X' , float , ':Y' , float , nl ;<br>
+solution block = 'Solution' , nl , { move } , nl ;<br>
+move = uintwh , '---&gt; ' , uintwh , [ move extension ] , <br>
+       '(' , uint , ')' , nl ;<br>
+move extension = '[' , sint , ' ---&gt; ' , sint , '] ' ;<br>
+length = 'Length:' , uint , nl ;<br>
+aux = ? unknown additional information ? , nl ;<br>
+nl = new line , { new line } ;<br>
+new line = '&lt;LF&gt;' | '&lt;CR&gt;' | '&lt;LF&gt;' , '&lt;CR&gt;' |
+'&lt;CR&gt;' , '&lt;LF&gt;' ;<br>
+numeral = '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' ;<br>
+uint = numeral , { numeral } ;<br>
+uintwh = uint , ' ' ;<br>
+sint = [ '+' ] , uint | '-' , uint ;<br>
+float = sint , '.' , uint | sint ;<br>
+hnumeral = numeral | 'a' | 'b' | 'c' | 'd' | 'e' | 'f' ;<br>
+color value = '#' , hnumeral , hnumeral , hnumeral , hnumeral ,<br>
+              hnumeral , hnumeral ;</span></p>
+
+<h2 style='margin-left:35.45pt;text-indent:-35.45pt'><a name="_Example"></a><a
+name="_Description"></a><span lang=EN-US>11.2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US>Description</span></h2>
+
+<p class=MsoNoSpacing style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-family:"Courier New"'>(&lt;node_id&gt;:&lt;IGNORED&gt;)[&lt;initial_entity_id&gt;:&lt;IGNORED&gt;:&lt;IGNORED&gt;]</span><span
+lang=EN-US style='font-family:"Courier New"'> </span><span lang=EN-US>stands
+for</span><span lang=EN-US> vertex definition. Note that entity identifications
+less or equal zero are reserved for empty nodes.</span></p>
+
+<p class=MsoNoSpacing style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-family:"Courier New"'>{&lt;source_node_id&gt;,&lt;destination_node_id&gt;}
+(&lt;IGNORED&gt;) </span><span lang=EN-US>stands for edge definition.</span></p>
+
+<p class=MsoNoSpacing style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-family:"Courier New"'>&lt;circle_id&gt;
+(&lt;source_node_id&gt;,&lt;destination_node_id&gt;): &lt;whole_circle&gt;
+[&lt;new_arc&gt;] {&lt;existing_arc&gt;} </span><span lang=EN-US>stands for
+circle definition. Last three tokens are lists of node identifications. Circle
+is created by joining new arc to the source and destination node, both of which
+are joints of existing arc.</span></p>
+
+<p class=MsoNoSpacing style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-family:"Courier New"'>M:IMMEDIATE </span><span
+lang=EN-US>selects validator for</span><span lang=EN-US style='font-family:
+"Courier New"'> </span><i><span lang=EN-US>Pebble motion on graph</span></i><span
+lang=EN-US>.</span></p>
+
+<p class=MsoNoSpacing style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-family:"Courier New"'>M:TRANSITIVE </span><span
+lang=EN-US>selects validator for</span><span lang=EN-US style='font-family:
+"Courier New"'> </span><i><span lang=EN-US>Multirobot path planning</span></i><span
+lang=EN-US>.</span></p>
+
+<p class=MsoNoSpacing style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-family:"Courier New"'>B_SCN:A:&lt;color&gt;
+</span><span lang=EN-US>is background color for graph view scene. Letter <i>A</i>
+stands for <i>all</i>, but has no practical meaning in this context.</span></p>
+
+<p class=MsoNoSpacing style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-family:"Courier New"'>P_BRD:A:&lt;color&gt;
+</span><span lang=EN-US>is color for edges and node borders. Letter <i>A</i>
+stands for <i>all</i>, but has no practical meaning in this context.</span></p>
+
+<p class=MsoNoSpacing style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-family:"Courier New"'>P_HLT:A: </span><span
+lang=EN-US>is color for edge highlighting. Letter <i>A</i> stands for <i>all</i>,
+but has no practical meaning in this context.</span></p>
+
+<p class=MsoNoSpacing style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-family:"Courier New"'>B_EMP:&lt;node_id&gt;:&lt;color&gt;
+</span><span lang=EN-US>is background color for empty node.</span></p>
+
+<p class=MsoNoSpacing style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-family:"Courier New"'>P_EMP:&lt;node_id&gt;:&lt;color&gt;
+</span><span lang=EN-US>is foreground color for empty node.</span></p>
+
+<p class=MsoNoSpacing style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-family:"Courier New"'>B_INH:&lt;entity_id&gt;:&lt;color&gt;
+</span><span lang=EN-US>is background color for entity in non-final position. <i>INH</i>
+stands for <i>inhabited</i>.</span></p>
+
+<p class=MsoNoSpacing style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-family:"Courier New"'>P_INH:&lt;entity_id&gt;:&lt;color&gt;
+</span><span lang=EN-US>is foreground color for entity in non-final position. <i>INH</i>
+stands for <i>inhabited</i>.</span></p>
+
+<p class=MsoNoSpacing style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-family:"Courier New"'>B_FIN:&lt;entity_id&gt;:&lt;color&gt;
+</span><span lang=EN-US>is background color for entity in final position. <i>FIN</i>
+stands for <i>final</i>.</span></p>
+
+<p class=MsoNoSpacing style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-family:"Courier New"'>P_FIN:&lt;entity_id&gt;:&lt;color&gt;
+</span><span lang=EN-US>is foreground color for entity in final position. <i>FIN</i>
+stands for <i>final</i>.</span></p>
+
+<p class=MsoNoSpacing style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-family:"Courier New"'>MATRIX:&lt;m11&gt;:&lt;m12&gt;:&lt;m21&gt;:&lt;m22&gt;:&lt;dx&gt;:&lt;dy&gt;
+</span><span lang=EN-US>is transformation matrix of the scene.</span></p>
+
+<p class=MsoNoSpacing style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-family:"Courier New"'>ANGLE:&lt;angle&gt;
+</span><span lang=EN-US>is rotation of the scene (in degrees). Currently <b>obsolete</b>,
+because scene is no longer rotated – rotation is saved in node positions
+instead.</span></p>
+
+<p class=MsoNoSpacing style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-family:"Courier New"'>CENTER:X&lt;x&gt;:Y&lt;y&gt;
+</span><span lang=EN-US>is point in the scene that is aligned to the center of
+viewport.</span></p>
+
+<p class=MsoNoSpacing style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-family:"Courier New"'>&lt;node_id&gt;:X&lt;x&gt;:Y&lt;y&gt;
+</span><span lang=EN-US>is position of specified node.</span></p>
+
+<p class=MsoListParagraph style='margin-bottom:10.5pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='line-height:115%;font-family:"Courier New"'>&lt;source_node_id&gt;
+---&gt; &lt;destination_node_id&gt; [&lt;IGNORED&gt; ---&gt; &lt;IGNORED&gt;]
+(&lt;time_step&gt;) </span><span lang=EN-US style='line-height:115%'>defines
+one particular move of unspecified entity between two specified nodes at
+specified time step. Direction of arrow does not necessarily match direction of
+move – if suggested direction is evaluated as invalid by</span><span
+lang=EN-US> validator</span><span lang=EN-US style='line-height:115%'>, there
+is a chance that the inverse direction would be evaluated as valid. Note that
+these lines might not be sorted by time step in the input file.</span></p>
+
+<h2 style='margin-left:35.45pt;text-indent:-35.45pt'><a name="_Example_1"></a><span
+lang=EN-US>11.3<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><span
+lang=EN-US>Example</span></h2>
+
+<p class=MsoNoSpacing style='margin-left:35.45pt'><span lang=EN-US
+style='font-family:"Courier New"'>id:1<br>
+V =<br>
+(1:0)[1:0:0]<br>
+(2:0)[2:0:0]<br>
+(3:0)[3:0:0]<br>
+E =<br>
+{1,2} (0)<br>
+{2,3} (0)<br>
+{3,1} (0)<br>
+MOD =<br>
+M:TRANSITIVE<br>
+COL =<br>
+B_SCN:A:#ffffff<br>
+P_BRD:A:#000000<br>
+P_HLT:A:#00ffff<br>
+B_EMP:1:#ffaa00<br>
+B_EMP:2:#ffaa00<br>
+B_EMP:3:#ffaa00<br>
+P_EMP:1:#000000<br>
+P_EMP:2:#000000<br>
+P_EMP:3:#000000<br>
+B_INH:1:#0000ff<br>
+B_INH:2:#ff0000<br>
+B_INH:3:#00ff00<br>
+P_INH:1:#ffffff<br>
+P_INH:2:#ffffff<br>
+P_INH:3:#ffffff<br>
+B_FIN:1:#00007f<br>
+B_FIN:2:#aa0000<br>
+B_FIN:3:#005500<br>
+P_FIN:1:#ffffff<br>
+P_FIN:2:#ffffff<br>
+P_FIN:3:#ffffff<br>
+POS =<br>
+MATRIX:1.68179:0:0:1.68179:0:0<br>
+ANGLE:0<br>
+CENTER:X-7.13524:Y-35.6762<br>
+1:X-18.7568:Y-8.08399<br>
+2:X4.0907:Y-71.4452<br>
+3:X-62.2215:Y-59.842<br>
+Solution<br>
+2 ---&gt; 3 [0 ---&gt; 0] (0)<br>
+3 ---&gt; 1 [0 ---&gt; 0] (0)<br>
+1 ---&gt; 2 [0 ---&gt; 0] (0)<br>
+3 ---&gt; 1 [0 ---&gt; 0] (1)<br>
+2 ---&gt; 3 [0 ---&gt; 0] (1)<br>
+1 ---&gt; 2 [0 ---&gt; 0] (1)<br>
+3 ---&gt; 1 [0 ---&gt; 0] (2)<br>
+2 ---&gt; 3 [0 ---&gt; 0] (2)<br>
+1 ---&gt; 2 [0 ---&gt; 0] (2)<br>
+Length:9</span></p>
+
+<h1 style='margin-left:1.0cm;text-indent:-1.0cm'><a name="_GraphRec_File_Format"></a><span
+lang=EN-US>12<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><span
+lang=EN-US>GraphRec File Format</span></h1>
+
+<p class=MsoNoSpacing><span lang=EN-US>This part of guide is intended only for
+advanced users who are going to create format converters or edit input files
+manually. If you have programming skills, note that GraphRec can be extended to
+include more format parsers (implementation details are described in <i>Programmer’s
+Documentation</i>). <i>GraphRec</i> file format is refined alternative to the <i>Multirobot</i>
+file format, which is burdened by compatibility redundancies. Format is
+specified in XML and is designed against requirement to provide better locality
+and encapsulation of information than <i>Multirobot</i> format.</span></p>
+
+<h2 style='margin-left:35.45pt;text-indent:-35.45pt'><a name="_Description_1"></a><span
+lang=EN-US>12.1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><span
+lang=EN-US>Description</span></h2>
+
+<p class=MsoNoSpacing><span lang=EN-US>While reading this section, it is
+recommended to refer to the example below. Note that optional tags or
+attributes are enclosed in square brackets. File is composed from XML header,
+document type </span><span lang=EN-US style='font-family:"Courier New"'>&lt;!DOCTYPE
+graphrec&gt;</span><span lang=EN-US> and single root element </span><span
+lang=EN-US style='font-family:"Courier New"'>&lt;graphrec
+version=&quot;&lt;version_number&gt;&quot;&gt;&lt;/graphrec&gt;</span><span
+lang=EN-US>. Root element acts as a container for one or more </span><span
+lang=EN-US style='font-family:"Courier New"'>&lt;solution [id=&quot;&lt;solution_id&gt;&quot;]&gt;&lt;/solution&gt;</span><span
+lang=EN-US> definitions, which are further composed from following elements:</span></p>
+
+<p class=MsoNoSpacing style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-family:"Courier New"'>[&lt;scene [bg=&quot;&lt;background_color&gt;&quot;]&gt;&lt;/scene&gt;]</span><span
+lang=EN-US> contains scene definition:</span></p>
+
+<p class=MsoNoSpacing style='margin-left:72.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-family:"Courier New"'>[&lt;viewport
+x=&quot;&lt;x_position&gt;&quot; y=&quot;&lt;y_position&gt;&quot;/&gt;]</span><span
+lang=EN-US> </span><span lang=EN-US>specifies point in the scene that is
+aligned to the center of viewport.</span></p>
+
+<p class=MsoNoSpacing style='margin-left:72.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-family:"Courier New"'>[&lt;matrix
+m11=&quot;&lt;m11&gt;&quot; m12=&quot;&lt;m12&gt;&quot; m21=&quot;&lt;m21&gt;&quot;
+m22=&quot;&lt;m22&gt;&quot; dx=&quot;&lt;dx&gt;&quot; dy=&quot;&lt;dy&gt;&quot;/&gt;]
+</span><span lang=EN-US>defines transformation matrix of the scene.</span></p>
+
+<p class=MsoNoSpacing style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-family:"Courier New"'>&lt;graph&gt;&lt;/graph&gt;</span><span
+lang=EN-US> contains graph definition:</span></p>
+
+<p class=MsoNoSpacing style='margin-left:72.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-family:"Courier New"'>&lt;entity id=&quot;&lt;entity_id&gt;&quot;
+[bg=&quot;&lt;background_color&gt;&quot;] [bgf=&quot;&lt;final_background_color&gt;&quot;]
+[fg=&quot;&lt;foreground_color&gt;&quot;] [fgf=&quot;&lt;final_foreground_color&gt;&quot;]/&gt;</span><span
+lang=EN-US> stands for entity definition. Note that entity identification must
+be greater than zero.</span></p>
+
+<p class=MsoNoSpacing style='margin-left:72.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-family:"Courier New"'>&lt;node
+id=&quot;&lt;node_id&gt;&quot; [ent=&quot;&lt;initial_entity_id&gt;&quot;] [x=&quot;&lt;x_position&gt;&quot;
+y=&quot;&lt;y_position&gt;&quot;] [bg=&quot;&lt;background_color&gt;&quot;] [fg=&quot;&lt;foreground_color&gt;&quot;]
+[bnd=&quot;&lt;boundary_color&gt;&quot;]/&gt;</span><span lang=EN-US
+style='font-family:"Courier New"'> </span><span lang=EN-US>stands for</span><span
+lang=EN-US> vertex definition. Note that entity identification must be greater
+than zero.</span></p>
+
+<p class=MsoNoSpacing style='margin-left:72.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-family:"Courier New"'>&lt;edge
+n1=&quot;&lt;first_node_id&gt;&quot; n2=&quot;&lt;second_node_id&gt;&quot;
+[ln=&quot;&lt;line_color&gt;&quot;]
+[hgl=&quot;&lt;highlight_color&gt;&quot;]/&gt;</span><span lang=EN-US
+style='font-family:"Courier New"'> </span><span lang=EN-US>stands for edge
+definition.</span></p>
+
+<p class=MsoNoSpacing style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-family:"Courier New"'>&lt;scenario
+[validator=&quot;&lt;validator_name&gt;&quot;]&gt;&lt;/scenario&gt;</span><span
+lang=EN-US> contains all movements off the solution:</span></p>
+
+<p class=MsoNoSpacing style='margin-left:72.0pt;text-indent:-18.0pt'><span
+lang=EN-US style='font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-family:"Courier New"'>&lt;move
+tms=&quot;&lt;time_step&gt;&quot; src=&quot;&lt;source_node_id&gt;&quot;
+dst=&quot;&lt;destination_node_id&gt;&quot;/&gt;</span><span lang=EN-US
+style='font-family:"Courier New"'> </span><span lang=EN-US>defines one
+particular move of unspecified entity between two specified nodes at specified
+time step. Direction implied by node atrributes does not necessarily match
+direction of move – if suggested direction is evaluated as invalid by</span><span
+lang=EN-US> validator</span><span lang=EN-US>, there is a chance that the
+inverse direction would be evaluated as valid. Note that move definitions might
+not be sorted by time step in the input file.</span></p>
+
+<h2 style='margin-left:35.45pt;text-indent:-35.45pt'><a name="_Example_2"></a><span
+lang=EN-US>12.2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><span
+lang=EN-US>Example</span></h2>
+
+<p class=MsoNoSpacing style='margin-top:0cm;margin-right:0cm;margin-bottom:
+0cm;margin-left:36.0pt;margin-bottom:.0001pt'><span lang=EN-US
+style='font-family:"Courier New"'>&lt;?xml version=&quot;1.0&quot;
+encoding=&quot;UTF-8&quot;?&gt;</span></p>
+
+<p class=MsoNoSpacing style='margin-top:0cm;margin-right:0cm;margin-bottom:
+0cm;margin-left:36.0pt;margin-bottom:.0001pt'><span lang=EN-US
+style='font-family:"Courier New"'>&lt;!DOCTYPE graphrec&gt;</span></p>
+
+<p class=MsoNoSpacing style='margin-top:0cm;margin-right:0cm;margin-bottom:
+0cm;margin-left:36.0pt;margin-bottom:.0001pt'><span lang=EN-US
+style='font-family:"Courier New"'>&lt;graphrec version=&quot;1.0&quot;&gt;</span></p>
+
+<p class=MsoNoSpacing style='margin-top:0cm;margin-right:0cm;margin-bottom:
+0cm;margin-left:36.0pt;margin-bottom:.0001pt'><span lang=EN-US
+style='font-family:"Courier New"'>    &lt;solution id=&quot;1&quot;&gt;</span></p>
+
+<p class=MsoNoSpacing style='margin-top:0cm;margin-right:0cm;margin-bottom:
+0cm;margin-left:36.0pt;margin-bottom:.0001pt'><span lang=EN-US
+style='font-family:"Courier New"'>        &lt;scene bg=&quot;#ffffff&quot;&gt;</span></p>
+
+<p class=MsoNoSpacing style='margin-top:0cm;margin-right:0cm;margin-bottom:
+0cm;margin-left:36.0pt;margin-bottom:.0001pt'><span lang=EN-US
+style='font-family:"Courier New"'>            &lt;viewport
+x=&quot;-1.18921&quot; y=&quot;-29.7302&quot;/&gt;</span></p>
+
+<p class=MsoNoSpacing style='margin-top:0cm;margin-right:0cm;margin-bottom:
+0cm;margin-left:36.0pt;margin-bottom:.0001pt'><span lang=EN-US
+style='font-family:"Courier New"'>            &lt;matrix
+m11=&quot;1.68179&quot; m12=&quot;0&quot; m21=&quot;0&quot; </span></p>
+
+<p class=MsoNoSpacing style='margin-top:0cm;margin-right:0cm;margin-bottom:
+0cm;margin-left:106.8pt;margin-bottom:.0001pt;text-indent:34.8pt'><span
+lang=EN-US style='font-family:"Courier New"'>m22=&quot;1.68179&quot;
+dx=&quot;0&quot; dy=&quot;0&quot;/&gt;</span></p>
+
+<p class=MsoNoSpacing style='margin-top:0cm;margin-right:0cm;margin-bottom:
+0cm;margin-left:36.0pt;margin-bottom:.0001pt'><span lang=EN-US
+style='font-family:"Courier New"'>        &lt;/scene&gt;</span></p>
+
+<p class=MsoNoSpacing style='margin-top:0cm;margin-right:0cm;margin-bottom:
+0cm;margin-left:36.0pt;margin-bottom:.0001pt'><span lang=EN-US
+style='font-family:"Courier New"'>        &lt;graph&gt;</span></p>
+
+<p class=MsoNoSpacing style='margin-top:0cm;margin-right:0cm;margin-bottom:
+0cm;margin-left:36.0pt;margin-bottom:.0001pt'><span lang=EN-US
+style='font-family:"Courier New"'>            &lt;entity id=&quot;1&quot;
+bg=&quot;#0000ff&quot; bgf=&quot;#00007f&quot; </span></p>
+
+<p class=MsoNoSpacing style='margin-top:0cm;margin-right:0cm;margin-bottom:
+0cm;margin-left:142.2pt;margin-bottom:.0001pt;text-indent:34.8pt'><span
+lang=EN-US style='font-family:"Courier New"'>fg=&quot;#ffffff&quot;
+fgf=&quot;#ffffff&quot;/&gt;</span></p>
+
+<p class=MsoNoSpacing style='margin-top:0cm;margin-right:0cm;margin-bottom:
+0cm;margin-left:36.0pt;margin-bottom:.0001pt'><span lang=EN-US
+style='font-family:"Courier New"'>            &lt;entity id=&quot;2&quot;
+bg=&quot;#ff0000&quot; bgf=&quot;#aa0000&quot; </span></p>
+
+<p class=MsoNoSpacing style='margin-top:0cm;margin-right:0cm;margin-bottom:
+0cm;margin-left:142.2pt;margin-bottom:.0001pt;text-indent:34.8pt'><span
+lang=EN-US style='font-family:"Courier New"'>fg=&quot;#ffffff&quot;
+fgf=&quot;#ffffff&quot;/&gt;</span></p>
+
+<p class=MsoNoSpacing style='margin-top:0cm;margin-right:0cm;margin-bottom:
+0cm;margin-left:36.0pt;margin-bottom:.0001pt'><span lang=EN-US
+style='font-family:"Courier New"'>            &lt;entity id=&quot;3&quot;
+bg=&quot;#00ff00&quot; bgf=&quot;#005500&quot; </span></p>
+
+<p class=MsoNoSpacing style='margin-top:0cm;margin-right:0cm;margin-bottom:
+0cm;margin-left:142.2pt;margin-bottom:.0001pt;text-indent:34.8pt'><span
+lang=EN-US style='font-family:"Courier New"'>fg=&quot;#ffffff&quot;
+fgf=&quot;#ffffff&quot;/&gt;</span></p>
+
+<p class=MsoNoSpacing style='margin-top:0cm;margin-right:0cm;margin-bottom:
+0cm;margin-left:36.0pt;margin-bottom:.0001pt'><span lang=EN-US
+style='font-family:"Courier New"'>            &lt;node id=&quot;1&quot;
+ent=&quot;1&quot; x=&quot;-18.7568&quot; y=&quot;-8.08399&quot;</span></p>
+
+<p class=MsoNoSpacing style='margin-top:0cm;margin-right:0cm;margin-bottom:
+0cm;margin-left:142.2pt;margin-bottom:.0001pt;text-indent:34.8pt'><span
+lang=EN-US style='font-family:"Courier New"'>bg=&quot;#ffaa00&quot;
+fg=&quot;#000000&quot; bnd=&quot;#000000&quot;/&gt;</span></p>
+
+<p class=MsoNoSpacing style='margin-top:0cm;margin-right:0cm;margin-bottom:
+0cm;margin-left:36.0pt;margin-bottom:.0001pt'><span lang=EN-US
+style='font-family:"Courier New"'>            &lt;node id=&quot;2&quot;
+ent=&quot;2&quot; x=&quot;4.0907&quot; y=&quot;-71.4452&quot; </span></p>
+
+<p class=MsoNoSpacing style='margin-top:0cm;margin-right:0cm;margin-bottom:
+0cm;margin-left:142.2pt;margin-bottom:.0001pt;text-indent:34.8pt'><span
+lang=EN-US style='font-family:"Courier New"'>bg=&quot;#ffaa00&quot;
+fg=&quot;#000000&quot; bnd=&quot;#000000&quot;/&gt;</span></p>
+
+<p class=MsoNoSpacing style='margin-top:0cm;margin-right:0cm;margin-bottom:
+0cm;margin-left:36.0pt;margin-bottom:.0001pt'><span lang=EN-US
+style='font-family:"Courier New"'>            &lt;node id=&quot;3&quot;
+ent=&quot;3&quot; x=&quot;-62.2215&quot; y=&quot;-59.842&quot;</span></p>
+
+<p class=MsoNoSpacing style='margin-top:0cm;margin-right:0cm;margin-bottom:
+0cm;margin-left:142.2pt;margin-bottom:.0001pt;text-indent:34.8pt'><span
+lang=EN-US style='font-family:"Courier New"'> bg=&quot;#ffaa00&quot;
+fg=&quot;#000000&quot; bnd=&quot;#000000&quot;/&gt;</span></p>
+
+<p class=MsoNoSpacing style='margin-top:0cm;margin-right:0cm;margin-bottom:
+0cm;margin-left:36.0pt;margin-bottom:.0001pt'><span lang=EN-US
+style='font-family:"Courier New"'>            &lt;edge n1=&quot;1&quot;
+n2=&quot;2&quot; ln=&quot;#000000&quot; hgl=&quot;#00ffff&quot;/&gt;</span></p>
+
+<p class=MsoNoSpacing style='margin-top:0cm;margin-right:0cm;margin-bottom:
+0cm;margin-left:36.0pt;margin-bottom:.0001pt'><span lang=EN-US
+style='font-family:"Courier New"'>            &lt;edge n1=&quot;2&quot;
+n2=&quot;3&quot; ln=&quot;#000000&quot; hgl=&quot;#00ffff&quot;/&gt;</span></p>
+
+<p class=MsoNoSpacing style='margin-top:0cm;margin-right:0cm;margin-bottom:
+0cm;margin-left:36.0pt;margin-bottom:.0001pt'><span lang=EN-US
+style='font-family:"Courier New"'>            &lt;edge n1=&quot;3&quot;
+n2=&quot;1&quot; ln=&quot;#000000&quot; hgl=&quot;#00ffff&quot;/&gt;</span></p>
+
+<p class=MsoNoSpacing style='margin-top:0cm;margin-right:0cm;margin-bottom:
+0cm;margin-left:36.0pt;margin-bottom:.0001pt'><span lang=EN-US
+style='font-family:"Courier New"'>        &lt;/graph&gt;</span></p>
+
+<p class=MsoNoSpacing style='margin-top:0cm;margin-right:0cm;margin-bottom:
+0cm;margin-left:36.0pt;margin-bottom:.0001pt'><span lang=EN-US
+style='font-family:"Courier New"'>        &lt;scenario
+validator=&quot;Multirobot&quot;&gt;</span></p>
+
+<p class=MsoNoSpacing style='margin-top:0cm;margin-right:0cm;margin-bottom:
+0cm;margin-left:36.0pt;margin-bottom:.0001pt'><span lang=EN-US
+style='font-family:"Courier New"'>            &lt;move tms=&quot;0&quot;
+src=&quot;3&quot; dst=&quot;1&quot;/&gt;</span></p>
+
+<p class=MsoNoSpacing style='margin-top:0cm;margin-right:0cm;margin-bottom:
+0cm;margin-left:36.0pt;margin-bottom:.0001pt'><span lang=EN-US
+style='font-family:"Courier New"'>            &lt;move tms=&quot;0&quot;
+src=&quot;1&quot; dst=&quot;2&quot;/&gt;</span></p>
+
+<p class=MsoNoSpacing style='margin-top:0cm;margin-right:0cm;margin-bottom:
+0cm;margin-left:36.0pt;margin-bottom:.0001pt'><span lang=EN-US
+style='font-family:"Courier New"'>            &lt;move tms=&quot;0&quot;
+src=&quot;2&quot; dst=&quot;3&quot;/&gt;</span></p>
+
+<p class=MsoNoSpacing style='margin-top:0cm;margin-right:0cm;margin-bottom:
+0cm;margin-left:36.0pt;margin-bottom:.0001pt'><span lang=EN-US
+style='font-family:"Courier New"'>            &lt;move tms=&quot;1&quot;
+src=&quot;1&quot; dst=&quot;2&quot;/&gt;</span></p>
+
+<p class=MsoNoSpacing style='margin-top:0cm;margin-right:0cm;margin-bottom:
+0cm;margin-left:36.0pt;margin-bottom:.0001pt'><span lang=EN-US
+style='font-family:"Courier New"'>            &lt;move tms=&quot;1&quot;
+src=&quot;2&quot; dst=&quot;3&quot;/&gt;</span></p>
+
+<p class=MsoNoSpacing style='margin-top:0cm;margin-right:0cm;margin-bottom:
+0cm;margin-left:36.0pt;margin-bottom:.0001pt'><span lang=EN-US
+style='font-family:"Courier New"'>            &lt;move tms=&quot;1&quot;
+src=&quot;3&quot; dst=&quot;1&quot;/&gt;</span></p>
+
+<p class=MsoNoSpacing style='margin-top:0cm;margin-right:0cm;margin-bottom:
+0cm;margin-left:36.0pt;margin-bottom:.0001pt'><span lang=EN-US
+style='font-family:"Courier New"'>            &lt;move tms=&quot;2&quot;
+src=&quot;1&quot; dst=&quot;2&quot;/&gt;</span></p>
+
+<p class=MsoNoSpacing style='margin-top:0cm;margin-right:0cm;margin-bottom:
+0cm;margin-left:36.0pt;margin-bottom:.0001pt'><span lang=EN-US
+style='font-family:"Courier New"'>            &lt;move tms=&quot;2&quot;
+src=&quot;2&quot; dst=&quot;3&quot;/&gt;</span></p>
+
+<p class=MsoNoSpacing style='margin-top:0cm;margin-right:0cm;margin-bottom:
+0cm;margin-left:36.0pt;margin-bottom:.0001pt'><span lang=EN-US
+style='font-family:"Courier New"'>            &lt;move tms=&quot;2&quot;
+src=&quot;3&quot; dst=&quot;1&quot;/&gt;</span></p>
+
+<p class=MsoNoSpacing style='margin-top:0cm;margin-right:0cm;margin-bottom:
+0cm;margin-left:36.0pt;margin-bottom:.0001pt'><span lang=EN-US
+style='font-family:"Courier New"'>        &lt;/scenario&gt;</span></p>
+
+<p class=MsoNoSpacing style='margin-top:0cm;margin-right:0cm;margin-bottom:
+0cm;margin-left:36.0pt;margin-bottom:.0001pt'><span lang=EN-US
+style='font-family:"Courier New"'>    &lt;/solution&gt;</span></p>
+
+<p class=MsoNoSpacing style='margin-top:0cm;margin-right:0cm;margin-bottom:
+0cm;margin-left:36.0pt;margin-bottom:.0001pt'><span lang=EN-US
+style='font-family:"Courier New"'>&lt;/graphrec&gt;</span></p>
+
+<p class=MsoNoSpacing style='margin-left:35.45pt'><span lang=EN-US
+style='font-family:"Courier New"'>&nbsp;</span></p>
+
+</div>
+
+</body>
+
+</html>

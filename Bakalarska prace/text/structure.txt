@@ -1,0 +1,15 @@
+- Study relevant literature on MAPF-R and identify aspects deserving visualization
+- Design visualization of MAPF-R plans and implement it as part of user-friendly software
+- The software should be cross-platform and should use modular architecture
+- Provide documentation of both the user part and the program so that future upgrades are possible
+- Test the visualization with existing MAPF-R planner
+
+----------------------------------------------------------------------------------------------    
+1: MAPF-R problem, indentification of aspects deserving to be visualized
+2: Definition of user requirements, design of architecture
+3: Implementation, testing, deployment 
+4: UI principles, functionality
+5: User manual
+6: Programmer documentation
+
+

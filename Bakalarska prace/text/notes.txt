@@ -1,0 +1,95 @@
+
+In the autonomous environment, where the major processes are machine controlled, customer needs are being incorporated in real-time, orders are automatically filled in the right order and shipped, the problem of adequate \verb|scheduling| is one of the most crucial problems posed by Industry 4.0.
+
+Furthermore, even data evaluation for logistical
+problems could benefit from these optimizations to
+reducing operation time and avoiding an excess use
+of space and resources.
+
+Once pallets are moved to the assigned location, tags will transmit signals to the WMS to provide real-time visibility into inventory levels, which could prevent costly out-of-stock situations, as well as (!!!)enhancing the management decision capability towards adjustments that might be needed to increase clients’ service level.
+
+The bottom line is this: We humans have to adapt to the machines as much as the machines have to adapt to us. Our careers depend on it.
+
+
+The level of sophistication required will substantially increase, throughout the IoT and the degree of specialization
+of human resources. The human resource (HR) competencies will change dramatically with the continuous adoption
+of the Industry 4.0 paradigm. The increasing necessity of computational and analytical skills, as well as the
+technological systems integration will change the common profiles of the HR in industry.
+
+“Smart Logistic” is a logistics system, which can enhance the flexibility, the adjustment to the market changes and will make the company be closer to the customer needs. This will make possible to improve the level of customer service, the optimization of the production and make lower the prices of storage and production. As the “Smart Logistics” will change accordingly to the actual technology driven, it has a time dependency and thus it is essential to define the state of the art of the technology [19].
+
+
+In a technological and in-line processes perspective it must be noticed, the Logistics 4.0 aim is not to replace humans in their works, but to avoid inaccuracies and to have faster processes where the information can be shared effortless and in real time. It will be always needed the involvement of people controlling the processes and taking control of any system failure.
+
+
+During the last decade, the use and evolution of Information and Communication Technologies (ICT) in industry have become unavoidable, mainly by being vital for increasing the organizational efficiency and its level of competitivity [1]. This has promoted the adoption of ICT in most of the industry activities, but especially in logistics and production operations.
+
+
+autonomy, transparency, task support and information representation
+
+event driven rescheduling
+
+The field study of McKay and Buzacott (2000) showed that human schedulers usually follow a ‘script’, independently of the production field in which they operate. It starts by evaluating the current situation, looking for critical issues or sources of conflict, as for instance a job that takes longer than planned or wrong uses of resources. Once identified, the scheduler has to determine whether to run a rescheduling process or reassign resources. Once done that, it updates the information on the schedule and runs again an analysis of possible critical issues. 
+
+
+At one field site, it was reported that the schedulers started each day with
+deleting the software generated plan and starting from scratch manually.
+
+A shop floor is the area of a factory, machine shop, etc. where people work on machines, or the space in a retail establishment where goods are sold to consumers. The term shop floor is in contrast to office, which is a space that provides accommodation to the business's management. 
+
+the shop floor - the ordinary workers in a factory, or the place where they work.
+
+Her conclusion was that humans and algorithms seem to have complementary
+strengths which could be combined. 
+
+The human scheduler turned out to be especially important in managing uncertainty.
+
+Limitations of human information processing capabilities stem mainly
+from two factors: (1) bounded rationality, and (2) incomplete problem
+representation.
+
+Wærn (1989) argues that user experience is both the most
+important and the least stable aspect of individual variation.
+
+scheduling monitors the progress of
+production and solves problems if the actual situation deviates from the
+scheduled situation
+
+the routine tasks could have be allocated to a decision support
+system, whereas the exceptional situations had to be handled by the human
+scheduler.
+
+the tasks might depend on information feeds from the manufacturing software systems (e.g., ERP)
+
+The concept of transparency can be considered a research area; in
+a decision support system, how can the system be designed with variable and
+controllable degrees of transparency to deal with the routine situations and
+the exceptional conditions? The schedulers do not want to see the details or
+be concerned about the parts of shop which are running smoothly, but
+require complete and comprehensive control for the problem areas. To make
+a distinction in visualization between aspects that allow routine and
+exceptions is a major challenge for any kind of scheduling support system.
+
+
+In the design model, no relationship is assumed to exist between a
+scheduling information system’s functionality and information presentation.
+However, in information systems, certain functionality might require or
+impede the presentation of certain information, and vice versa. For example,
+a low level of support of a scheduling information system’s functionality is
+often combined with information presentation functions. Possible
+interactions between functionality and information presentation therefore have to be considered during the design of a scheduling information system
+in practice.
+
+
+
+Smart scheduling
+Smart scheduling processes constitute one of the main challenges in the design of CCPS.
+
+
+
+
+Job losses
+
+
+
+

@@ -1,0 +1,23 @@
+Visualization MAPF-R
+--------------------------------------------------
+
+Multi-Agent Pathfinding problem deals with finding paths for multiple agents
+so they can avoid collisions with each other and reach their goal destination.
+The majority of MAPF problems is solved on grids with discrete time. 
+It uses space-time maps to describe agent's location at a certain moment of time - Cell(x, y, t), where (x,y) are space coordinates on the map and (t) is a timestep. MAPF-R is Multi-Agent Pathfinding with continuous time, where agent motion is planned for a certain time interval. This time interval is considered to be safe for planned actions, which means there would be no collisions during this time interval. Agent's actions could be Move, which is moving to the next position, or Wait, which means that agent is keeping its position during the time interval.
+
+Given the broad spectrum of practical applications of MAPF problem, such as robotics, vehicle routing, video games - it is important to provide it with good visualization tools. 
+Visualization of MAPF problem solving algorithms is crucial for further analysis of algorithm, finding its weak points and detecting ways to make it more effective.
+
+The main goal of this bachelor thesis is to design and develop visualization application of
+MAPF-R. It will function as a GUI for boOX application, which provides with solution data. Following application requirements has been determined:
++ visualization agents behaviour, which includes moving and waiting, on the map
++ visualization agents physical appearance as it is set in input files
++ possibility to record the solution in photo and video formats
++ possibility to adjust speed of movements
++ possibility to return backwards
++ SW will have modular architecture
+
+It is possible to predict, that robotic technology will play a significant role in marketing and commerce in the new decade. Assuming that robots will function as managers and selling assistants, comprehensive and easy-to-use GUI, that allows communication between user and robot units, should be developed. In this bachelor thesis, we should study potential applications of MAPF-R visualization application in commerce branch. For instance, agents are robots that buy groceries in shopping mall, where visualization allows manager to control robots movements. In addition, possible influence on sales should be studied.    
+
+

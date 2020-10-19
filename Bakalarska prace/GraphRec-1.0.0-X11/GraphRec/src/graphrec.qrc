@@ -1,0 +1,20 @@
+<RCC>
+    <qresource prefix="/icons" >
+        <file>images/list-add.png</file>
+        <file>images/media-playback-start.png</file>
+        <file>images/media-playback-stop.png</file>
+        <file>images/list-add-all.png</file>
+        <file>images/media-playback-start-all.png</file>
+        <file>images/media-playback-stop-all.png</file>
+        <file>images/applications-system.png</file>
+        <file>images/input-mouse.png</file>
+        <file>images/input-mouse-ruler.png</file>
+        <file>images/document-open.png</file>
+        <file>images/image-x-generic.png</file>
+        <file>images/media-floppy.png</file>
+        <file>images/video-x-generic.png</file>
+        <file>images/ffmpeg.png</file>
+        <file>images/qt.png</file>
+        <file>images/graphrec.png</file>
+    </qresource>
+</RCC>

@@ -1,0 +1,117 @@
+   
+1: Understanding of MAPF-R problem and its visual analysis
+
+-----------------------------------------------------------------------
+
+In this chapter we will determine theoretical basis of MAPF-R problem,
+secondly we will characterize what visual analysis is, its main functions and tools,
+and indicate essential aspects of MAPF-R problem that have to be visualized.
+
+Multi-Agent Pathfinding problem deals with planning paths for multiple agents
+so they can avoid collisions with each other and reach their target destination.
+The MAPF problem has a vast range of domains where it is being applied, including robot planning, autonomous vehicles, videogames, automated warehouses. 
+
+The input of standard MAPF problem for k agents is a tuple <G,s,t>, where G = (V,E) is a graph, s:[1,....,k] is a set of starting vertices for k agents, t:[1,....,k] is a set of target vertices for k agents. Action is a function a:V->V, where a(v)->v' suggests
+that if an agent is at vertex v, after performing action A it will be in vertex v'.
+Every agent has two types of actions: WAIT and MOVE. WAIT means that agent stays at the current vertex, MOVE means that agent moves from its current vertex v to an adjacent vertex v'. Single-agent plan is a sequence of actions π = (a1,....,an), that leads agent i from s[i]
+to s[i] after being executed. The output of standard MAPF problem is a solution π = (π1,...., πk), that contains k single-agent plans, where one agent has one single-agent plan.
+
+The majority of MAPF problems is solved on grids with discrete time, where the duration 
+of every action is one time step and each agent occupies exactly one single location in every time step. All agents are considered to be of the same shape and size and have the same constant speed. It uses space-time maps to describe agent's location at a certain moment of time - Cell(x, y, t), where (x,y) are space coordinates on the map and (t) is a timestep. 
+
+The solution to MAPF problem is considered to be VALID, in case there is no CONFLICT between
+any two single-agent plannings. The standard MAPF problem includes following types of conflicts:
++ VERTEX CONFLICT - occurs if agents are planned to occupy the same vertex at the same time step.
++ EDGE CONFLICT - occurs if agents are planned to traverse the same edge at the same time
+at the same time-step in the same direction.
++ FOLLOWING CONFLICT - occurs when one agent is planned to occupy a vertex that was occupied 
+by another agent on the previous time step.
++ CYCLE CONFLICT - occurs if in the same time step every agent moves to a vertex that was previously occupied by another agent, forming a rotating cycle pattern.
++ SWAPPING CONFLICT - occurs if agents are planned to swap locations in a single time step.
+
+Along with being valid, the solution has addional parameters, that evaluate a MAPF solution.
++ MAKESPAN is the number of time steps, that are required for all agents to reach their target position. For a MAPF solution π = (π1,...., πk), the makespan is |πi|, where πi is a single-agent plan with the maximum amount of steps for agent i.
++ SUM OF COSTS is the sum of time steps, that are required for each agent to reach their target position, which is ∑1≤i≤k|πi|. 
+
+The MAPF problem in descrete time  is less applicable in real world situations where processes occur in real time. The MAPF-R is Multi-Agent Pathfinding with continuous time, where agent motion is planned for a certain time interval. This time interval is a minium time considered to be safe for planned actions, which means there would be no collisions during this time interval. Similar to the standard MAPF problem, MAPF-R has as an input a workspace and agents parameters. Workspace is a 2D space, which can be represented as a graph G = (V, E), where vertices V are location, that agents can occupy, and edges E are line trajectories, which agents move along. Agents parameters are start location and target destination. An output of algorithm is a MAPF-R problem solution, which is a joint plan for agents. Joint plan consists of individual plans for each agent, where the plan is a sequence of actions for agent needed to be taken so it could reach its target position. Duration of a move is translation speed times the length of the edge. In order to evaluate the MAPF-R solution such parameters as the makespan and the sum of costs are still applicable, however the definition of a plan cost differs. Instead of the number of time steps, cost of a plan is the sum of the durations of its constituent actions. 
+
+When focusing on algorithms that solve MAPF-R problem, the key requirement is that the solution is cost-optimal. Although there are several algorithms for solving MAPF-R problem, algorithm, that is considered the most efficient, is CCBS, which stands for Continuous-time conflict based search.
+[table with algorithm efficiency comparison]
+First, CBS algorithm in discrete time should be de described. As an input we have workspace and agents parameters. Conflict-based search algorithm finds separate plans for each agent, then it determines conflicts between those plans and solves it by replannig whith specific constraints, that has been put on individual plans. Two types of conflicts are being considered in CBS: an edge conflict and a vertex conflict. A vertex conflict is a situation <i, j, v, t>, when agents i and j are planning to occupy vertex v at the same moment of time t. An edge conflict is a situation <i, j, e, t>, when agents i and j are planning to traverse edge e at the same time t from oposite directions. There is two types of constraints in conflict-based search algorithm, which are vertex constraint and edge constraint, Vertex constraint <i, v, t> is a configuration when agent i is not allowed to occupy vertex v at the time t. Similarly to vertex constraint, edge constraint <i, e, t> is a configuration when i is prohibited to traverse edge e at the moment of time t. CBS consists of high-level search and low-level search. Low-level search is looking for individual paths for each agent with given set of constraints. High-level search is a constraint-tree, which is a binary tree with a node representing constraints and joint plan. For each node, low-level search finds a plan for agents with imposed constraints. In case plan does not have neither vertex nor edge conflicts, the solution has been found. Otherwise, high-level search continues with the node which has the lowest cost.
+[high-level search CBS]
+
+CCBS, conflict-based search algorithm in continuous time, is different to CBS in the following way: agents can have any geometric shape, different speed and acceleration and agent's actions can have any duration, a conflicts in CCBS can occur between agents traversing different edges. Conflict in CCBS is a conflict between actions, for instance,
+a conflict configurtion <a[i], t[i], a[j], t[j]> means, that if agent i executes action a[i] during the time period t[i] and if agent j executes action a[j] during the time period t[j], then collision will happen between agent i and j.
+High-level search is similar to its discrete version. However, CCBS low-level search differ from its discrete version. 
+[Low-level search with SIPP]
+
+
+//-------------------------------------------------------------------------------------------
+
+In this section visual analysis of MAPF-R problem will be discussed. The correct MAPF-R problem visualization is necessary as long as it allows to convey a visual analysis of the solution. Visual analysis is meant to facilitate the detection of conflicts and redundant elements in terms of output solution. As a matter of fact, in case of the MAPF-R problem containing tens to hundreds of agents it is extremely hard to determine if output solution is correct without visual representation.
+
+Visual analytics is described as the science of analytical reasoning assisted by interactive visual interfaces. Visual analysis incorporates aspects of visual representation, user interaction and algorithmic analysis. Those aspects are a foundation of a sufficient visual analysis tools and are closely interconnected. For instance, algorithmic analysis may function as a preprocessing step that determine specific graph layout for visual representation. Algorithmic analysis ... View representation ... 
+User interaction aim to discover different aspects of the data by changing visual representation and requesting different algorithmic processing of the data. User interaction may be minimal, where data is processed automatically, or, on the contrary, data processing is fully dependent on parameters inserted by user. User interaction can be classified by such criteria as user intention, task, user action. Those criteria are interrelated; for example, one task might be obtained by performing several actions, or several intentions might include the same task. As far as graph visualization is concerned, standard user interaction techniques might be applied, such as highlighting, brushing, linking, panning and zooming. Zooming and panning facilitate navigation in any direction and change the zoom level within the view. Highlighting is making an emphasis on interesting elements of the visual representation.
+
+As an input data set MAPF-R visualisation tool will operate with graph charachteristics, agent parameters and its plans. The graph characteristics data set is composed of following components: a number of edges, a number of vertices and which ones are connected with edges, coordinates for each vertex within the cartesian coordinate system. The agent parameters data set includes agent shape and size parameters, its velocity and acceleration, and agent start position as well as agent target position. The agent plans data set represents agent behaviour within the timeline, i.e. agent action during specific time intervals.     
+
+Visual representation is based on data, which means that any modification in data affects the visual representation. For instance, data filtering influences which parts of the data set are going to be displayed and that could change graph modification or layout. In case of MAPF-R visualisation tool, user does not modificate or filter data set, although user could input different agent plans for the same graph, which results in different agent movement animation on the same graph layout. 
+
+As far as visual representation is concerned, the main challenge is to establish an acceptable level of physical abstraction, i.e. determine which aspects of problem should be visualized and which could be ignored. The workspace is presented as a graph on 2D space, where nodes interconnected with edges mean that agent is physically allowed to traverse between them. Other physical parameters of space, such as lightning, air temperature, floor level, height of ceiling, can be ignored in visualization. The position of vertices are specified by coordinates within the cartesian coordinate system. Edge between two vertices is a line connecting two points. The exact position of edges is imperative since it has directl influence to the possibility of collision between agents. As previously stated, MAPF-R problem takes into account agent physical shape and size, subsequently physical restrictions, which are implied, should be visualized properly. It will allow user to detect danger areas, where the risk of collision between agents is higher than average. Since agent's constraints are presented as a set of time intervals, agent have to move in real time according to its velocity and acceleration.
+
+In addition to visual representation, we aim to collect statistics data as a part of data analysis. Data analysis enhances visual observation and facilitates the probability of making an analytical discovery. The statistics data indicates algorithm perfomance and effectivness. In case of MAPF-R problem visualization tool, we will collect data about overall time duration of the solution as well as time duration for individual agents to reach its target destination from starting point. Furthermore, we aim to collect data of how much time agent moves and how much time agent waits, using this data we could estimate moving/waiting ratio for each agent. 
+
+Using visualisation analysis in combination with data analysis, it is possible to convey a perfomance comparison of several MAPF-R problem solution. Based on this analysis it is feasable to find out which algorithm solves MAPF-R problem more effectively.
+
+//------------------------------------------------------------------------------------------
+
+
+
+The moving/waiting ratio indicates if the chosen solution is more or less effective in comparison to other solutions.
+
+
+
+
+
+Visual analysis and data analysis
+
+First of all, it has to be pointed out which conflicts and redundancies algorithm solution could potentially contain. Although the most crucial one is agent not arriving at its goal destination, nevertheless the most common problem is a collision of two or more agents.
+Visual analysis should detect collisions as well as high-risk collision situations.
+Solution redudancies involve ineffective time management in agent's schedule, i.e. longer
+waiting time-period, more time-consuming way to get to goal destination for agents, etc..   
+
+Visual analysis should detect collisions as well as high-risk collision situations.
+[collision risk evaluation]
+
+In order to effectively detect time-management redundancies, we need to analyze certain statistics data. We should collect data of how much time each agent is in a state MOVING and in a state WAITING. The MOVING/WAITING time ratio as well as overall time (for agents to reach its goal destination from starting point) indicates if the chosen solution is more or less effective in comparison to other solutions.
+
+
+Visual comparison analysis of two algorithms, statics data comparison.
+Using a visual analysis tool it is possible to convey a comparison of several algorithms solving the same problem. Based on that we could find out which algorithm creates the most effective solution.
+
+//------------------------------------------------------------------------------------------
+
+(*)
+(data analytics)During the whole process of visualization agent has several distinctive states. The first state - INITIALIZED - is in the beggining, when agent is positioned on the starting vertex. At the moment, in which agent starts moving towards its goal, it transitions to the second state - MOVING. In case agent stops on route, it transitions to the state - WAITING. Finally, when agent reaches its goal, it transitions to the state - ARRIVED. In order to visually differentiate those states, we should mark those agents in four different colors, in what respect one color corresponds to one state. In addition to that we should add color palette
+in interest of customization settings, so that user could set personally preferable colors for each state. It also could be useful to implement night mode.
+
+Visualization of real-time movement will allow user to indentify if agent could speed up or slow down in order to be more effective.
+
+
+
+Data -> Visual representation(*) -> View
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

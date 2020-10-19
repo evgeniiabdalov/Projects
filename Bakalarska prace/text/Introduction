@@ -1,0 +1,19 @@
+Visual Analysis of Plans for Multi-Agent Path Finding with Continuous Time
+--------------------------------------------------
+
+Data-driven decision making
+With growing amount of data and information-driven processes, visual analysis is relevant.
+One of the data consuming task is Multi-Agent planning. Solution could include redundencies,
+therefore visual analysis is needed.
+
+In modern technological and economical environment the importance of data has increased dramatically. As a matter of fact, data-driven desicion making has a lead role in succesfull management techniques. Nevertheless, in order to extract genuine value from your data, the one must process data correctly. Dealing with vast amount of data has a potential to increase probability of making a miscalculation in data processing. In such situation we could implement tools that facilitate visual analysis of data, i.e. use visual interfaces to process data.
+
+Among various algorithmic problems there is a certain class of problems, that requires proper visual analysis in order to be solved correctly, - those are problems on graphs. Graph is an abstraction, that models interconnections between set of objects. It is a collection of vertices and edges, that are defined by pairs of vertices. One of the most common type of problems that are solved on graphs is space-orientated problems, where vertex is an abstraction for a location(cities,rooms, airports) and an edge is an abstraction for a route between them. The problem is commonly stated, that we need to find the shortest path from a location A to a location B. Let's make an assumption that there is only one agent, that travels on graph. In this case, in order to succesfully find a path we need to take into account only restrictions that are put by space-graph. However, if we add more agents, that are travelling on graph, we should take other agents movements as a restrictions that must be considered while finding the solution. This kind of problems is called Multi-Agent Path Finding problem. Multi-Agent Pathfinding(MAPF) problem deals with finding paths for multiple agents, so they can avoid collisions with each other and reach their target destination.
+The solution to MAPF problem is as complex as amount of agents involved, which leads to the necessity of using visual analysis of the solution. Thus, there is a motivation to design a visualiation tool. Visualization of MAPF problem is crucial for further analysis of the solution, finding its redundancies and detecting ways to make it more effective.
+   
+The main goal of this thesis is to design and develop a visualization tool for multi-agent pathfinding problem with continuous time that enables its visual analysis. In interest of achieving this goal, following tasks must be accomplished:
+- Study relevant literature on MAPF-R and identify aspects deserving visualization
+- Design and implement visualization tool of MAPF-R plans
+- Provide documentation of both the user part and the program so that future upgrades are possible
+- Analyze economic potential of the visualization tool in logistic domains where MAPF-R is used as an underlying concept for navigating robotic manipulators
+

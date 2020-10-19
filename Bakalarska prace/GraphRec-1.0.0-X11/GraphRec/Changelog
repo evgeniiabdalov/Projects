@@ -1,0 +1,28 @@
+* version 1.0.0 (Apr 30 2010)
+- final release
+Bug: Removed possible crash when unsplitting tabs.
+
+* version 0.9.9 (Feb 14 2010)
+Changed: Executable linked statically to dependencies and packed by UPX.
+Changed: Slightly improved performance of animation and layouting.
+Bug: Resolved performance issues when selecting nodes.
+Bug: Removed some incompatibilities caused by the migration to Qt 4.6.x.
+Bug: Status bar message did not reflect actual state under certain conditions.
+Added: Focused tab is now visually emphasized by the frame.
+Added: Animation speed can be dynamically adjusted by the newly added slider.
+
+* version 0.9.5 (Nov 21 2009)
+Bug: Menu action Window - Controls was incorrectly connected to tabs.
+Bug: Possible crash while validating incorrectly crafted input.
+Bug: Temporary messages in the status bar were not changing with tabs.
+Bug: Crash when validating input with inverse movements in the same time step.
+Bug: Unviewed tabs were incorrectly saved when saving all tabs at once.
+Added: It is possible to synchronize timing of parallel animations.
+Added: Kamada-Kawai layouting algorithm.
+Added: Improved error logging - errors are tracked by clicking on log entries.
+Added: Support for a new XML file format (both opening and saving).
+Linux: Resolved issue of corrupted tabs when opening more graphs at once.
+Linux: Standard libc, libpthread libraries removed from redistributable package.
+
+* version 0.7.5 (Sep 15 2009)
+- initial public release
