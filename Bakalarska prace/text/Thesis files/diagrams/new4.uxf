@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>5</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>10</x>
+      <y>225</y>
+      <w>335</w>
+      <h>55</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;CollisionData&gt;&gt;
+Package::Statistics
+--
+TreeMap&lt;Integer, Pair&lt;Integer, Integer&gt;&gt; collisionTimeMap;
+List&lt;Pair&lt;Double, Double&gt;&gt; collisionTimeList;
+--
+CollisionData();
+
+
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>10</x>
+      <y>0</y>
+      <w>335</w>
+      <h>200</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;AgentMovementData&gt;&gt;
+Package::Statistics
+--
+Integer                                                          agentIndex;
+
+List&lt;SpaceTimeData&gt;                                  agentMovement;
+TreeMap&lt;Integer, VectorData&gt;                    vectorDataMap;
+
+private TreeMap&lt;Integer, Double&gt;              speedMovement;
+--
+AgentMovementData(Integer agentIndex);
+
+void                    createAgentMovementData(Double x1, Double y1, Double x2, Double y2,  
+                                                     Double startTime, Double finishTime, 
+                                                     boolean lastMovement);
+
+
+Coordinate          getCurrentCoordinates(Coordinate start, Coordinate direction, 
+                                                         Double mainModule, Double currentModule);
+
+SpaceTimeData  getSpaceTimeData(Integer time);
+
+
+Integer                getAgentMovementTime();
+
+
+
+
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>370</x>
+      <y>0</y>
+      <w>335</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;CollisionRiskData&gt;&gt;
+Package::Statistics
+--
+TreeMap&lt;Integer, TreeMap&lt;Integer, Double&gt;&gt; collisionRiskDataMap
+--
+CollisionRiskData();
+
+void addCollisionRiskData(Integer firstAgentIndex,
+                                     Integer secondAgentIndex,
+                                     Double  collisionRisk);
+
+Double getAgentsRiskCollisionData(Integer firstAgentIndex, Integer secondAgentIndex)
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>480</x>
+      <y>115</y>
+      <w>400</w>
+      <h>265</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;StatisticsData&gt;&gt;
+Package::Statistics
+--
+TreeMap&lt;Integer, AgentMovementData&gt;    agentMovementData;
+TreeMap&lt;Integer, DistanceData&gt;                distanceDataMap;
+TreeMap&lt;Integer, CollisionRiskData&gt;           collisionRiskDataMap;
+
+AgentTimeRatioData                                      agentTimeRatioData;
+CollisionData                                                  collisionData;
+ShortestDistanceData                                    shortestDistanceData;
+--
+StatisticsData();
+
+void  setAgentTimeRatioData(AgentTimeRatioData agentTimeRatioData);
+                           
+void  setMovementData(TreeMap&lt;Integer, AgentMovementData&gt; agentMovementData);
+
+void  setCollisionData(CollisionData collisionData);
+
+void  setDistanceDataMap(TreeMap&lt;Integer, DistanceData&gt; distanceDataMap);
+
+void  setRiskDataMap(TreeMap&lt;Integer, CollisionRiskData&gt; riskDataMap);
+
+void  setShortestDistanceData(ShortestDistanceData shortestDistanceData);
+
+Double getTimeAgentSpecificDistanceData(Integer time, Integer firstAgentIndex, Integer secondAgentIndex);
+
+Double getTimeAgentSpecificCollisionRiskData(Integer time, Integer firstAgentIndex, Integer secondAgentIndex);
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>400</y>
+      <w>545</w>
+      <h>195</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;MovementAnalyzer&gt;&gt;
+Package::Statistics
+--
+TreeMap&lt;Integer, AgentMovementData&gt;  agentMovementMap;
+TreeMap&lt;Integer, Double&gt;             agentRadiusMap;
+
+CollisionData                        collisionData;
+StatisticsData                       statisticsData;
+--
+MovementAnalyzer();
+
+void       addAgentMovementData(Integer agentIndex, 
+                          Double x1, Double y1, Double x2, Double y2, 
+                          Double startTime, Double endTime, Double agentRadius, Boolean lastMovement);
+
+void      analyzeMovement();
+
+boolean checkCollision(Coordinate firstLocation, Coordinate secondLocation, Double firstRadius, Double secondRadius); 
+
+Double  getDistance(Coordinate firstLocation, Coordinate secondLocation, Double firstRadius, Double secondRadius);
+
+Double  getRiskCollision(Double distance);
+
+StatisticsData  getStatisticsData();
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>165</x>
+      <y>275</y>
+      <w>15</w>
+      <h>135</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;250.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>390</x>
+      <y>235</y>
+      <w>100</w>
+      <h>175</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>180.0;10.0;10.0;10.0;10.0;330.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>340</x>
+      <y>165</y>
+      <w>150</w>
+      <h>15</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;280.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>410</x>
+      <y>95</y>
+      <w>80</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;100.0;140.0;100.0</additional_attributes>
+  </element>
+</diagram>

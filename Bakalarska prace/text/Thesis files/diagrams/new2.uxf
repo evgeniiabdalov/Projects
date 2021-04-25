@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>10</y>
+      <w>760</w>
+      <h>620</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;AnimationController&gt;&gt;
+Package::Visualization
+--
+MainGUI  mainGUI;
+Timeline timeline;
+--
+AnimationController(MainGUI mainGUI);
+
+void    initializeTimeline( GraphController graphController, AgentController currentAgents );
+
+void    moveTimeline( Circle agentCircle, Plan plan, TreeMap&lt;Integer, Vertex&gt; verticesMap );
+
+void            getKeyFrames( GraphController graphController, AgentController currentAgents );
+
+void            timerKeyFrames(  Duration duration, Label timerLabel );
+
+void            labelTimeline(Label agentLabel, Duration duration, double xCoordinate, double yCoordinate );
+
+Animation.Status getAnimationStatus();
+
+void            playAnimationFrom(Number timePosition);
+
+void            playAnimation();
+
+void             pauseAnimation();
+
+void             stopAnimation();
+
+void             speedUpAnimation();
+
+void             slowDownAnimation();
+
+void             forwardDirectionAnimation();
+
+void             backwardDirectionAnimation();
+
+Double           getTimelineDurationMilliseconds();
+
+Double           getCurrentTimeMilliseconds();
+
+
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
