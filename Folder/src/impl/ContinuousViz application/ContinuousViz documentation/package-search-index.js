@@ -1,1 +1,0 @@
-packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"m":"MAPF.R.visualization.tool","l":"Business"},{"m":"MAPF.R.visualization.tool","l":"DAO"},{"m":"MAPF.R.visualization.tool","l":"GUI"},{"m":"MAPF.R.visualization.tool","l":"PhotoVideoOutput"},{"m":"MAPF.R.visualization.tool","l":"Statistics"},{"m":"MAPF.R.visualization.tool","l":"Visualization"}]

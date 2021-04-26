@@ -1,1 +1,0 @@
-moduleSearchIndex = [{"l":"MAPF.R.visualization.tool"}]
