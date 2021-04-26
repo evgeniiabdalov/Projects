@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="433.0" prefWidth="661.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.SolutionParametersGUI">
+   <children>
+      <HBox layoutY="-3.0" prefHeight="440.0" prefWidth="661.0">
+         <children>
+            <TextArea fx:id="graphParametersText" prefHeight="359.0" prefWidth="190.0" />
+            <VBox prefHeight="400.0" prefWidth="245.0">
+               <children>
+                  <TreeView fx:id="agentsTree" prefHeight="440.0" prefWidth="238.0" />
+               </children>
+            </VBox>
+            <TextArea fx:id="agentParametersText" prefHeight="331.0" prefWidth="247.0" />
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

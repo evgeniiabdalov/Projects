@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>10</x>
+      <y>50</y>
+      <w>340</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;AgentVisual&gt;&gt;
+Package::Visualization
+--
+Circle agentCircle;
+--
+AgentVisual( Integer ID, Double radius);
+
+Circle getAgentCircle();
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>280</y>
+      <w>380</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;GraphVisual&gt;&gt;
+Package::Visualization
+--
+List&lt;Line&gt;   edgeLines;
+List&lt;Circle&gt; vertexCircles;
+boolean        isVisible;
+--
+GraphVisual();
+void addLine(Vertex fromVertex, Vertex toVertex);
+void addCircle(Vertex vertex);
+void changeVisibility()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>410</x>
+      <y>70</y>
+      <w>410</w>
+      <h>400</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;ColorSetter&gt;&gt;
+Package::Visualization
+--
+Color vertexColor;
+Color movingAgentColor;
+Color waitingAgentColor;
+Color initializedAgentColor;
+Color arrivedAgentColor;
+Color markedAgentColor;
+--
+ColorSetter();
+
+Color getVertexColor();
+Color getMovingAgentColor();
+Color getWaitingAgentColor();
+Color getInitializedAgentColor();
+Color getArrivedAgentColor();
+Color getMarkedAgentColor();
+
+void setVertexColor(Color vertexColor);
+void setMovingAgentColor(Color movingAgentColor);
+void setWaitingAgentColor(Color waitingAgentColor);
+void setInitializedAgentColor(Color initializedAgentColor);
+void setArrivedAgentColor(Color arrivedAgentColor);
+void setMarkedAgentColor(Color markedAgentColor);
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

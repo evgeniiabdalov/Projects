@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefHeight="485.0" prefWidth="929.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.MainGUI">
+   <children>
+      <HBox prefHeight="25.0" prefWidth="620.0">
+         <children>
+            <MenuButton mnemonicParsing="false" prefHeight="26.0" prefWidth="142.0" text="File">
+              <items>
+                  <MenuItem fx:id="newSolutionButton" mnemonicParsing="false" onAction="#setFileLoader" text="New solution" />
+                  <MenuItem fx:id="startVisualizationButton" mnemonicParsing="false" onAction="#startVisualization" text="Start visualization" />
+                  <MenuItem fx:id="solutionParametersButton" mnemonicParsing="false" onAction="#setSolutionParameters" text="Solution parameters" />
+                  <MenuItem fx:id="clearVisualizationButton" mnemonicParsing="false" onAction="#clearVisualizationPane" text="Clear visualization" />
+              </items>
+            </MenuButton>
+            <MenuButton mnemonicParsing="false" prefHeight="26.0" prefWidth="116.0" text="View">
+              <items>
+                  <MenuItem fx:id="singleAgentStatisticsButton" mnemonicParsing="false" onAction="#setSingleAgentStatistics" text="Single agent statistics" />
+                  <MenuItem fx:id="doubleAgentStatisticsButton" mnemonicParsing="false" onAction="#setDoubleAgentStatistics" text="Double agent statistics" />
+                  <MenuItem fx:id="groupAgentStatisticsButton1" mnemonicParsing="false" onAction="#setGroupAgentStatistics" text="Group agent statistics" />
+                <MenuItem fx:id="changeColorButton" mnemonicParsing="false" onAction="#setColorChanger" text="Change colors" />
+                <MenuItem fx:id="visibleGraphCheckButton" mnemonicParsing="false" onAction="#setGraphVisibilityCheck" onMenuValidation="#setGraphVisibilityCheck" text="Graph visible" />
+                  <MenuItem fx:id="visibleAgentsCheckButton" mnemonicParsing="false" onAction="#setAgentsVisibilityCheck" onMenuValidation="#setAgentsVisibilityCheck" text="Agents visible" />
+              </items>
+            </MenuButton>
+            <MenuButton fx:id="timerLabel" mnemonicParsing="false" text="PhotoVideoOutput">
+              <items>
+                <MenuItem fx:id="takeSnapshotButton" mnemonicParsing="false" onAction="#takeSnapshot" text="Take snapshot" />
+                <MenuItem fx:id="startVideoButton" mnemonicParsing="false" onAction="#takeVideo" text="Start video" />
+                  <MenuItem fx:id="videoSettingsButton" mnemonicParsing="false" onAction="#openVideoSettings" text="Video settings" />
+              </items>
+            </MenuButton>
+            <Button fx:id="helpButton" mnemonicParsing="false" onAction="#openHelp" prefHeight="26.0" prefWidth="102.0" text="Help" />
+            <Label fx:id="timer" prefHeight="26.0" prefWidth="92.0" />
+            <CheckBox fx:id="showAgentLabelsCheck" mnemonicParsing="false" onAction="#setAgentLabelVisibilityCheck" prefHeight="26.0" prefWidth="154.0" text="show agent labels" />
+            <CheckBox fx:id="showGraphLabelsCheck" mnemonicParsing="false" onAction="#setGraphLabelVisibilityCheck" prefHeight="26.0" prefWidth="171.0" text="show graph labels" />
+         </children>
+      </HBox>
+      <HBox prefHeight="363.0" prefWidth="939.0">
+         <children>
+            <TreeView fx:id="solutionTree" prefHeight="306.0" prefWidth="284.0" />
+            <ScrollPane fx:id="scrollPane" hbarPolicy="ALWAYS" pannable="true" prefHeight="364.0" prefWidth="797.0" vbarPolicy="ALWAYS">
+               <content>
+                  <Pane fx:id="mainVisualPane" prefHeight="363.0" prefWidth="721.0" />
+               </content>
+            </ScrollPane>
+         </children>
+      </HBox>
+      <HBox alignment="TOP_RIGHT" prefHeight="28.0" prefWidth="939.0">
+         <children>
+            <Button fx:id="slowDownButton" mnemonicParsing="false" prefHeight="26.0" prefWidth="183.0" text="slow down" />
+            <Button fx:id="backwardButton" mnemonicParsing="false" prefHeight="26.0" prefWidth="168.0" text="&lt;&lt;&lt;" />
+            <Button fx:id="stopButton" mnemonicParsing="false" prefHeight="26.0" prefWidth="153.0" text="stop" />
+            <Button fx:id="playButton" mnemonicParsing="false" prefHeight="26.0" prefWidth="173.0" text="play" />
+            <Button fx:id="forwardButton" mnemonicParsing="false" prefHeight="26.0" prefWidth="141.0" text="&gt;&gt;&gt;" />
+            <Button fx:id="speedUpButton" mnemonicParsing="false" prefHeight="26.0" prefWidth="168.0" text="speed up" />
+         </children>
+      </HBox>
+      <HBox prefHeight="38.0" prefWidth="939.0">
+         <children>
+            <Slider fx:id="timelineSlider" prefHeight="16.0" prefWidth="956.0" />
+         </children>
+      </HBox>
+      <HBox prefHeight="27.0" prefWidth="939.0">
+         <children>
+            <Slider fx:id="rotationSlider" prefHeight="76.0" prefWidth="784.0" />
+         </children>
+      </HBox>
+   </children>
+</VBox>
