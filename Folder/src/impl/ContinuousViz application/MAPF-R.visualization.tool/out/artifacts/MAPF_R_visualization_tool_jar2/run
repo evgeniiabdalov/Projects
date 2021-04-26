@@ -1,0 +1,2 @@
+java --module-path ../../../javafx-sdk-11.0.2/lib/ --add-modules  javafx.base,javafx.controls,javafx.fxml,javafx.graphics,javafx.media,javafx.swing,javafx.swt,javafx.web -jar MAPF-R.visualization.tool.jar
+

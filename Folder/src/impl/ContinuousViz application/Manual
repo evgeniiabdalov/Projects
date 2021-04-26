@@ -1,0 +1,202 @@
+	ContinousRec (MAPF-R visualization tool) manual:
+	----------------------------------------------------------------------------------
+
+	Main toolbar inscludes such interface elements as:
+	• the main menu panel
+	• the uploaded solutions list
+	• the visualization screen
+	• the vizualization control panel
+
+	In File menu user could:
+	• upload new solution
+	• start visualization process
+	• check solution parameters
+	• clear the visualization screen
+
+	------------------New solution-----------------------------
+
+	New solution button opens window for setting up input files. There are three
+	types of files that has to be uploaded.
+
+	Load agents button opens file dialogue to set up file with agents pa-
+	rameters. Load graph button opens file dialogue to set up file with graph
+	parameters. Load plans button opens file dialogue to set up file with agents
+	plans. In text field user should input solution name. SUBMIT button initiates
+	uploading data from files and creating new solution. This new solution then
+	appears in the uploaded solutions list(left side of main window).
+
+	------------------Start visualization-----------------------------
+
+	In order to visualize solution on the screen user should choose one in the
+	uploaded solutions list, then click on button Start visualization, which
+	launches visualization.
+
+	------------------Solution parameters-----------------------------
+
+	Solution parameters button opens an information window, with such solu-
+	tion parameters as an amount of vertices, an amount of edges, a list of agents,
+	etc.. In order to open agent parameters(agent identification, start location,
+	target location, etc), user should choose an agent from the list and then
+	double-click it, as a result the agent’s parameters will be shown in the right
+	section of the window.
+
+	------------------Clear visualization-----------------------------
+
+	Clear visualization button removes a visualized solution from the screen.
+
+	------------------The visualization screen-----------------------------
+
+	Graph and agent objects are displayed on the visualization screen.
+
+	------------------Zooming-----------------------------
+
+	In order to zoom in or zoom out user should put a cursor on the graph and
+	scroll in or scroll out respectively.Zooming in and zooming out is activated by
+	touchpad.
+
+	------------------Marking agents-----------------------------
+
+	In order to mark an agent, user should click on it. In order to unmark it user
+	should click on it again. By default marked agent color is not set up, so user
+	should set it up manually in Color settings.
+
+	------------------View-----------------------------
+
+	In the view menu user could:
+	• open the single agent statistics window
+	• open the double agent statistics window
+	• open the color settings window
+	• manipulate visibility settings
+
+	------------------Single agent statistics-----------------------------
+
+	Single agent statistics button opens window with single agent statistics
+	interface.
+
+	------------------Double agent statistics-----------------------------
+
+	Double agent statistics button opens window with double agent statistics
+	interface.
+
+	------------------Change color-----------------------------
+
+	Change color button opens a window with color settings interface. The win-
+	dow has several color palettes: moving agent, waiting agent, initialized agent,
+	arrived agent, marked agent, vertex. First yser has to define all this color
+	palletes. Afterwards SUBMIT COLOR button applies color settings.
+
+	------------------Graph visible-----------------------------
+
+	Graph visible button changes graph visibility settings. If the graph is visible,
+	it will be invisible, otherwise it returns to its initial visible state.
+
+	------------------Agent visible-----------------------------
+
+	Agent visible button changes visibility of agents. It makes not marked
+	agents invisible and it leaves marked agents visible on the screen.
+	To return all agents back to its visibility, user should click Agent visible button
+	again.
+
+	------------------PhotoVideoOutput-----------------------------
+
+	PhotoVideoOutput menu button contains buttons that are responsible for
+	multimedia output.
+
+	------------------Take snapshot-----------------------------
+
+	Take snapshot button creates photos of visualization screen and of single/-
+	double statistics screen, if they are opened at the moment.
+
+	------------------Start video/Stop video-----------------------------
+
+	In order to begin video capture user should activate Start video button.
+	Video captures everything that happens on the screen. Stop video stops
+	video capture.
+
+	------------------VideoSettings-----------------------------
+
+	In order to set resolution of video recording user should activate Video settings
+	button. Then input height and width parameters of video recording. Pay at-
+	tention, that you should input value, which is one point lesser than monitor
+	parameter. For instance, if your monitor resolution is 1366*768, you should
+	input width:1365, height:767
+
+	------------------The visualization control panel-----------------------------
+
+	The visualization control panel is an interface that manipulates the visual-
+	ization process. play button starts an animation, pause button pauses the
+	animation, stop button stops the animation. When the animation is being
+	played, timer appears on top of the screen and starts running. >>> and <<<
+	buttons change direction of the animation, forwards and backwards respec-
+	tively. To adjust speed user could use speed up or slow down buttons.
+	Among the visualization controllers there are two sliders. The top slider
+	controls a timeline position. By using the timeline slider user could 
+	adjust time of the animation. The down slider controls a rotation state. User
+	could use the rotation slider to adjust an angle of the visualization screen.
+
+
+	------------------The single agent statistics window overview-----------------------------
+
+	The single agent statistics window showcases statistical data, that are related
+	to the one single agent. First user should input an agent index, statistical
+	data will be shown specifically for the agent with inserted index.
+
+	The time ratio chart displays data, that are linked to the agent states:
+	MOVING, WAITING, INTIALIZING, ARRIVED.
+
+	Time ratio mode menu button has two options, total time ratio and
+	agent time ratio. total time ratio activates the bar chart with the total
+	time ratio data. agent time ratio activates the bar chart with the time ratio
+	data, that are relevant for the chosen agent. It is possible to display the total
+	time ratio and the single agent time ratio at the same time, which is useful
+	for a comparison analysis.
+
+	Data mode menu button has two options: Speed mode and Location mode.
+	Speed mode is a function that displays agent speed value at the current time
+	of movement. Speed mode is a function that displays agent location value at
+	the current time of movement.
+
+	Chart mode menu button sets up how data is going to be displayed.
+	Real-time mode starts displaying as animation starts playing. Data updates
+	every second, therefore it is recommended to slow down animation speed.
+	Not real time mode displays data independently on animation playing. To
+	set frequency rate in the precision text field user should insert the period
+	of milliseconds. The minimum value is 60, since the animation is displayed in Java FX standard 60 fps,
+	the maximum value is the total duration of the animation.
+
+	------------------The double agent statistics window overview-----------------------------
+
+	The double agent statistics window showcases statistical comparison data be-
+	tween two agents. User should insert two indexes, each one corresponds to its
+	relative agent.
+
+	Chart mode button menu button sets up how data is going to be displayed.
+	It has the same options as Chart mode button in the single agent statistics
+	interface.
+
+	Data mode menu button has two options. Distance mode is a function
+	that displays the distance between two agents at the current time of movement.
+	Collision risk mode is a function that displays the rate of collision risk
+	between two agents at the current time of movement.
+
+	Collisions are displayed in Collision list. In this list agents involved
+	in collision event are presented as well as time of collision event. User should
+	click on the collision event list item and click button Set collision event.
+	Afterwards on the visualization screen there are only selected agents left. To
+	make all agents visible again, user should click agents visible button.
+
+	-------------------The group agent statistics window overview------------------------------
+
+	The group agent statistics window showcases statistical comparison data be-
+	tween a group of agents. User should insert mark agents on the main window,
+	then by clicking set group agents button the group is set - agent indexes
+	appear in the list.
+
+	Similar to previous statistics windows Data mode menu button has two op-
+	tions: Distance mode and Collision risk mode. Distance mode displays
+	average distance value within the group of agents, meanwhile Collision risk mode
+	displays average risk collision between agents in the group.
+
+
+ 
+

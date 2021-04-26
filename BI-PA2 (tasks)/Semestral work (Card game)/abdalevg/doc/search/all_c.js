@@ -1,0 +1,20 @@
+var searchData=
+[
+  ['savegame',['saveGame',['../classFile.html#a524dc63ddee71076f3a326abf4c98020',1,'File']]],
+  ['savescore',['saveScore',['../classFile.html#ae4ed0bd1ba8af8783aeda7d866dbcc11',1,'File']]],
+  ['sendattack',['sendAttack',['../classGamer.html#ae87f321766845bb73a946132c8fdf5e7',1,'Gamer']]],
+  ['seteffect',['setEffect',['../classCard.html#a106d9d8a36187a7ac2139e492d52a9b7',1,'Card']]],
+  ['setenergy',['setEnergy',['../classGamer.html#a9a2ccff038df738dc8b0f75d16a6a959',1,'Gamer']]],
+  ['setgamename',['setGameName',['../classGame.html#a4c9004b6c5cdb0cd77841cd733095d4d',1,'Game']]],
+  ['sethealth',['setHealth',['../classAttack.html#a9cf9c3d7ab938f3e67b071bd7fe948a7',1,'Attack::setHealth()'],['../classGamer.html#a42d93587738bde9ac1117b07e9808c72',1,'Gamer::setHealth()']]],
+  ['setname',['setName',['../classCard.html#a3900bdd572a94b23133d350509f60868',1,'Card::setName()'],['../classGamer.html#ade6c65e6b04d5f751e32f6afb05bbb57',1,'Gamer::setName()']]],
+  ['setpower',['setPower',['../classAttack.html#a7bae8a5473f0f93cec1902a5ec166dbd',1,'Attack::setPower()'],['../classGamer.html#a099f5ee0342159cff8261ca83c223bf8',1,'Gamer::setPower()']]],
+  ['setprotection',['setProtection',['../classAttack.html#a05875ecb97baecc1f04a1462916223a4',1,'Attack::setProtection()'],['../classGamer.html#a0083d185e08fbac0ed3b470b0003b485',1,'Gamer::setProtection()']]],
+  ['setresponse',['setResponse',['../classAI.html#ab77719ba50bbcd9fb9d53f96b51fa120',1,'AI::setResponse()'],['../classPerson.html#ac4d1532475369d01caa16ba4f53922c1',1,'Person::setResponse()']]],
+  ['showcards',['showCards',['../classGamer.html#a6886a6cc5cca9d2a2f8cb458a00eff7d',1,'Gamer']]],
+  ['showmenu',['showMenu',['../classGameManager.html#a7978788ddf8b965ec5ea994e91c8e34a',1,'GameManager']]],
+  ['showparameters',['showParameters',['../classGamer.html#ab1b9ebb683eaff96218101535f709fe1',1,'Gamer']]],
+  ['start',['start',['../classGameManager.html#a8460b2f4f44c19dd405e4163fe6cb5cf',1,'GameManager']]],
+  ['startgame',['startGame',['../classGame.html#ae8638ccdb0ef3bf39a6affa30aa1258f',1,'Game']]],
+  ['stopgame',['stopGame',['../classGame.html#a9ec1a0c5ee8b5e06fa429162b5e73564',1,'Game']]]
+];

@@ -1,0 +1,142 @@
+\changetocdepth {3}
+\babel@toc {english}{}
+\babel@toc {english}{}
+\babel@toc {czech}{}
+\babel@toc {english}{}
+\babel@toc {czech}{}
+\babel@toc {english}{}
+\contentsline {chapter}{Introduction}{1}{chapter*.5}
+\contentsline {chapter}{\chapternumberline {1}Understanding of MAPF-R problem and its visual analysis}{3}{chapter.1}
+\contentsline {section}{\numberline {1.1}Motivation}{3}{section.1.1}
+\contentsline {section}{\numberline {1.2}Multi-Agent Pathfinding problem description}{3}{section.1.2}
+\contentsline {section}{\numberline {1.3}Conflict based search algorithm}{5}{section.1.3}
+\contentsline {section}{\numberline {1.4}Visual analysis}{8}{section.1.4}
+\contentsline {subsection}{\numberline {1.4.1}Visual analysis methods and tools}{9}{subsection.1.4.1}
+\contentsline {subsubsection}{\numberline {1.4.1.1}Graph visual representation}{11}{subsubsection.1.4.1.1}
+\contentsline {subsection}{\numberline {1.4.2}MAPF-R problem visualization theory}{11}{subsection.1.4.2}
+\contentsline {subsubsection}{\numberline {1.4.2.1}Statistical analysis}{12}{subsubsection.1.4.2.1}
+\contentsline {chapter}{\chapternumberline {2}Analysis and design of the MAPF-R visualization tool - ContinuousViz}{13}{chapter.2}
+\contentsline {section}{\numberline {2.1}MAPF-R visualization tool purpose}{13}{section.2.1}
+\contentsline {section}{\numberline {2.2}MAPF-R visualization tool usage}{14}{section.2.2}
+\contentsline {section}{\numberline {2.3}User requierements}{14}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Animation requirements}{14}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}Manipulating layout requirements}{14}{subsection.2.3.2}
+\contentsline {subsection}{\numberline {2.3.3}Visibility settings requirements}{14}{subsection.2.3.3}
+\contentsline {subsection}{\numberline {2.3.4}Color settings requirements}{14}{subsection.2.3.4}
+\contentsline {subsection}{\numberline {2.3.5}Statistical analysis tools requirements}{15}{subsection.2.3.5}
+\contentsline {subsection}{\numberline {2.3.6}Reading input data requirements}{15}{subsection.2.3.6}
+\contentsline {subsection}{\numberline {2.3.7}Non-functional requirements}{15}{subsection.2.3.7}
+\contentsline {section}{\numberline {2.4}Data description}{15}{section.2.4}
+\contentsline {section}{\numberline {2.5}Technologies used}{17}{section.2.5}
+\contentsline {section}{\numberline {2.6}Architectural design}{17}{section.2.6}
+\contentsline {section}{\numberline {2.7}Component design}{19}{section.2.7}
+\contentsline {subsection}{\numberline {2.7.1}Business logic module}{19}{subsection.2.7.1}
+\contentsline {subsection}{\numberline {2.7.2}GUI module}{19}{subsection.2.7.2}
+\contentsline {subsection}{\numberline {2.7.3}Statistics module}{20}{subsection.2.7.3}
+\contentsline {subsection}{\numberline {2.7.4}Visualization module component}{21}{subsection.2.7.4}
+\contentsline {subsection}{\numberline {2.7.5}DAO module}{21}{subsection.2.7.5}
+\contentsline {section}{\numberline {2.8}Test design}{22}{section.2.8}
+\contentsline {subsection}{\numberline {2.8.1}Incorrect input}{22}{subsection.2.8.1}
+\contentsline {subsubsection}{\numberline {2.8.1.1}Incorrect agents}{22}{subsubsection.2.8.1.1}
+\contentsline {subsubsection}{\numberline {2.8.1.2}Incorrect graph}{23}{subsubsection.2.8.1.2}
+\contentsline {subsubsection}{\numberline {2.8.1.3}Incorrect plans}{24}{subsubsection.2.8.1.3}
+\contentsline {subsection}{\numberline {2.8.2}Redundant solution}{24}{subsection.2.8.2}
+\contentsline {subsubsection}{\numberline {2.8.2.1}Collision test}{24}{subsubsection.2.8.2.1}
+\contentsline {subsubsection}{\numberline {2.8.2.2}Ineffective plans}{24}{subsubsection.2.8.2.2}
+\contentsline {chapter}{\chapternumberline {3}MAPF-R visualization tool - ContinuousViz - developer manual}{25}{chapter.3}
+\contentsline {section}{\numberline {3.1}Build}{25}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Linux}{25}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Windows}{26}{subsection.3.1.2}
+\contentsline {section}{\numberline {3.2}Business logic}{26}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Agent}{26}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}AgentState}{28}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}Plan}{28}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.4}Step}{28}{subsection.3.2.4}
+\contentsline {subsection}{\numberline {3.2.5}TimeInterval}{28}{subsection.3.2.5}
+\contentsline {subsection}{\numberline {3.2.6}Vertex}{28}{subsection.3.2.6}
+\contentsline {subsection}{\numberline {3.2.7}Edge}{28}{subsection.3.2.7}
+\contentsline {subsection}{\numberline {3.2.8}Graph}{29}{subsection.3.2.8}
+\contentsline {subsection}{\numberline {3.2.9}AgentController}{29}{subsection.3.2.9}
+\contentsline {subsection}{\numberline {3.2.10}GraphController}{30}{subsection.3.2.10}
+\contentsline {subsection}{\numberline {3.2.11}MainController}{30}{subsection.3.2.11}
+\contentsline {section}{\numberline {3.3}Statistics}{31}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}SpaceTimeData}{31}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Coordinate, VectorData}{32}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}AgentMovement}{32}{subsection.3.3.3}
+\contentsline {subsection}{\numberline {3.3.4}DistanceData}{32}{subsection.3.3.4}
+\contentsline {subsection}{\numberline {3.3.5}CollisionData}{32}{subsection.3.3.5}
+\contentsline {subsection}{\numberline {3.3.6}CollisionRiskData}{33}{subsection.3.3.6}
+\contentsline {subsection}{\numberline {3.3.7}AgentTimeRatio}{33}{subsection.3.3.7}
+\contentsline {subsection}{\numberline {3.3.8}AgentTimeRatioData}{33}{subsection.3.3.8}
+\contentsline {subsection}{\numberline {3.3.9}ShortestDistanceData}{33}{subsection.3.3.9}
+\contentsline {subsection}{\numberline {3.3.10}StatisticsData}{34}{subsection.3.3.10}
+\contentsline {subsection}{\numberline {3.3.11}MovementAnalyzer}{34}{subsection.3.3.11}
+\contentsline {section}{\numberline {3.4}Visualization}{35}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}AgentVisual}{35}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.4.2}GraphVisual}{35}{subsection.3.4.2}
+\contentsline {subsection}{\numberline {3.4.3}ColorSetter}{36}{subsection.3.4.3}
+\contentsline {subsection}{\numberline {3.4.4}AnimationController}{36}{subsection.3.4.4}
+\contentsline {section}{\numberline {3.5}GUI}{36}{section.3.5}
+\contentsline {subsection}{\numberline {3.5.1}Uploading solution}{36}{subsection.3.5.1}
+\contentsline {subsection}{\numberline {3.5.2}Starting and controlling solution visualization}{37}{subsection.3.5.2}
+\contentsline {subsection}{\numberline {3.5.3}Setting up color palettes interface}{38}{subsection.3.5.3}
+\contentsline {subsection}{\numberline {3.5.4}Setting up statistics interfaces}{38}{subsection.3.5.4}
+\contentsline {subsection}{\numberline {3.5.5}Converting visualization into photo/video format}{39}{subsection.3.5.5}
+\contentsline {section}{\numberline {3.6}DAO}{40}{section.3.6}
+\contentsline {subsection}{\numberline {3.6.1}DataReader}{40}{subsection.3.6.1}
+\contentsline {subsection}{\numberline {3.6.2}DataSet}{40}{subsection.3.6.2}
+\contentsline {section}{\numberline {3.7}PhotoVideoOutput}{40}{section.3.7}
+\contentsline {subsection}{\numberline {3.7.1}PhotoOutputController}{40}{subsection.3.7.1}
+\contentsline {subsection}{\numberline {3.7.2}VideoOutputController}{41}{subsection.3.7.2}
+\contentsline {section}{\numberline {3.8}Test results}{41}{section.3.8}
+\contentsline {subsection}{\numberline {3.8.1}Incorrect input}{41}{subsection.3.8.1}
+\contentsline {subsection}{\numberline {3.8.2}Redundant input}{41}{subsection.3.8.2}
+\contentsline {chapter}{\chapternumberline {4}The MAPF-R visualization tool - ContinuousViz - user manual}{43}{chapter.4}
+\contentsline {section}{\numberline {4.1}Main toolbar overview}{43}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}File}{43}{subsection.4.1.1}
+\contentsline {subsubsection}{\numberline {4.1.1.1}New solution}{44}{subsubsection.4.1.1.1}
+\contentsline {subsubsection}{\numberline {4.1.1.2}Start visualization}{45}{subsubsection.4.1.1.2}
+\contentsline {subsubsection}{\numberline {4.1.1.3}Solution parameters}{45}{subsubsection.4.1.1.3}
+\contentsline {subsubsection}{\numberline {4.1.1.4}Clear visualization}{45}{subsubsection.4.1.1.4}
+\contentsline {subsection}{\numberline {4.1.2}The visualization screen}{45}{subsection.4.1.2}
+\contentsline {subsubsection}{\numberline {4.1.2.1}Zooming}{45}{subsubsection.4.1.2.1}
+\contentsline {subsubsection}{\numberline {4.1.2.2}Marking agents}{46}{subsubsection.4.1.2.2}
+\contentsline {subsection}{\numberline {4.1.3}View}{46}{subsection.4.1.3}
+\contentsline {subsubsection}{\numberline {4.1.3.1}Single agent statistics}{47}{subsubsection.4.1.3.1}
+\contentsline {subsubsection}{\numberline {4.1.3.2}Double agent statistics}{47}{subsubsection.4.1.3.2}
+\contentsline {subsubsection}{\numberline {4.1.3.3}Change color}{47}{subsubsection.4.1.3.3}
+\contentsline {subsubsection}{\numberline {4.1.3.4}Graph visible}{47}{subsubsection.4.1.3.4}
+\contentsline {subsubsection}{\numberline {4.1.3.5}Agent visible}{47}{subsubsection.4.1.3.5}
+\contentsline {subsection}{\numberline {4.1.4}PhotoVideoOutput}{48}{subsection.4.1.4}
+\contentsline {subsubsection}{\numberline {4.1.4.1}Take snapshot}{48}{subsubsection.4.1.4.1}
+\contentsline {subsubsection}{\numberline {4.1.4.2}Start video/Stop video}{49}{subsubsection.4.1.4.2}
+\contentsline {subsubsection}{\numberline {4.1.4.3}VideoSettings}{49}{subsubsection.4.1.4.3}
+\contentsline {subsection}{\numberline {4.1.5}Help}{49}{subsection.4.1.5}
+\contentsline {subsection}{\numberline {4.1.6}The visualization control panel}{49}{subsection.4.1.6}
+\contentsline {section}{\numberline {4.2}The single agent statistics window overview}{50}{section.4.2}
+\contentsline {section}{\numberline {4.3}The double agent statistics window overview}{52}{section.4.3}
+\contentsline {section}{\numberline {4.4}The group agent statistics window overview}{53}{section.4.4}
+\contentsline {chapter}{\chapternumberline {5}Comparison analysis}{57}{chapter.5}
+\contentsline {subsection}{\numberline {5.0.1}Conceptual analysis}{57}{subsection.5.0.1}
+\contentsline {subsection}{\numberline {5.0.2}Technological analysis}{58}{subsection.5.0.2}
+\contentsline {subsection}{\numberline {5.0.3}Comparison summary}{58}{subsection.5.0.3}
+\contentsline {chapter}{\chapternumberline {6}Analysis of MAPF-R visualization tool ContinuousViz economic impact on logistics}{61}{chapter.6}
+\contentsline {section}{\numberline {6.1}Industry 4.0}{61}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}Industry 4.0 fundamental technologies/concepts}{63}{subsection.6.1.1}
+\contentsline {subsubsection}{\numberline {6.1.1.1}Cyber-Physical systems}{63}{subsubsection.6.1.1.1}
+\contentsline {subsubsection}{\numberline {6.1.1.2}Internet of Things}{64}{subsubsection.6.1.1.2}
+\contentsline {subsubsection}{\numberline {6.1.1.3}Smart data}{64}{subsubsection.6.1.1.3}
+\contentsline {subsubsection}{\numberline {6.1.1.4}Smart factory}{64}{subsubsection.6.1.1.4}
+\contentsline {section}{\numberline {6.2}Visualization in Industry 4.0}{65}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}Visualization replacement concept}{65}{subsection.6.2.1}
+\contentsline {subsection}{\numberline {6.2.2}Visualization creation concept}{66}{subsection.6.2.2}
+\contentsline {section}{\numberline {6.3}Smart Logistics}{67}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1}Amazon warehouse automation experience}{68}{subsection.6.3.1}
+\contentsline {subsection}{\numberline {6.3.2}MAPF-R visualization tool practical applications in warehouse management}{70}{subsection.6.3.2}
+\contentsline {section}{\numberline {6.4}Economic assessment summary}{71}{section.6.4}
+\contentsline {chapter}{Conclusion}{73}{chapter*.6}
+\contentsline {chapter}{Bibliography}{75}{chapter*.7}
+\contentsline {appendix}{\chapternumberline {A}List of abbreviations used}{77}{appendix.A}
+\contentsline {appendix}{\chapternumberline {B}ContinuousViz class diagrams}{79}{appendix.B}
+\contentsline {appendix}{\chapternumberline {C}Input data files examples}{86}{appendix.C}
+\contentsline {appendix}{\chapternumberline {D}Contents of the enclosed flash disk}{89}{appendix.D}

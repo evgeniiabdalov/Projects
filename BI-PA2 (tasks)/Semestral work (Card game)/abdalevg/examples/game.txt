@@ -1,0 +1,15 @@
+game_name: game
+
+gamer1_name:Evg
+gamer1_health:10
+gamer1_protection:2
+gamer1_power:1
+gamer1_energy:1
+
+gamer2_name: y
+
+gamer2_health:10
+gamer2_protection:2
+gamer2_power:1
+gamer2_energy:1
+
